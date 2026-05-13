@@ -7,56 +7,195 @@
   <link rel="stylesheet" href="/toku-trust-center-preview/assets/styles.css" />
 </head>
 <body>
-  <header class="promo">Referred customers receive a 10% discount on all core offerings and solutions - up to $5,000. <a href="https://www.toku.com/contact">Contact us now!</a></header>
-  <nav class="site-nav">
-    <a class="logo" href="/toku-trust-center-preview/security-center/"><img src="/toku-trust-center-preview/assets/logo.svg" alt="Toku" /></a>
-    <div class="nav-links">
-      <a href="https://www.toku.com">Products</a>
-      <a href="https://www.toku.com">Solutions</a>
-      <a href="https://www.toku.com">Resources</a>
-      <a href="/toku-trust-center-preview/security-center/">Company / Trust Center</a>
-      <a href="https://www.toku.com/pricing">Pricing</a>
-      <a href="https://www.toku.com/contact">Contact Us</a>
+  <div class="page">
+    <a class="skipLink" href="#main">Skip to content</a>
+    <header class="siteHeader">
+  <div class="promoBar top-nav-padding">
+    <span>Referred customers receive a 10% discount on all core offerings and solutions - up to $5,000.</span>
+    <a class="top-nav-cta w-inline-block" href="https://www.toku.com/contact">Contact us now!</a>
+  </div>
+  <div class="header nav-padding mx_width">
+    <a class="brand nav-home w-inline-block" href="https://www.toku.com">
+      <img src="/toku-trust-center-preview/toku-assets/logo.svg" alt="Toku" class="logo" />
+    </a>
+    <nav class="nav nav-list-wrap hide-tb" aria-label="Toku site navigation">
+      <details class="marketingNavItem nav-item nav-dropdown w-dropdown" data-nav-group="products">
+  <summary class="nav-dropdown-toggle w-dropdown-toggle">Products</summary>
+  <div class="megaMenu products-dropdown-details w-dropdown-list">
+    <div class="megaInner p-dropdown-contentwrap">
+      <div class="megaColumns p-dropdown-grid _2-col-grid">
+        <section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Toku Payroll Platform</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/global-employer-of-record-platform">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-user.svg" alt="" /></span>
+              <span><strong class="w_600">Toku Employer of Record</strong><span>Expand into new markets fast with compliant hiring.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/aor">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-product.svg" alt="" /></span>
+              <span><strong class="w_600">Toku Agent of Record</strong><span>Onboard, pay, and manage contractors.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/toku-payroll">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-banking.svg" alt="" /></span>
+              <span><strong class="w_600">Toku Global Payroll</strong><span>Pay teams globally with compliance and tax automation.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/token-grant-administration">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-analytics.svg" alt="" /></span>
+              <span><strong class="w_600">Token Grant Administration</strong><span>Handle grants, cap tables, and payroll globally.</span></span>
+            </a>
+          </div>
+        </section><section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Payroll API</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://docs.toku.com/integration-guide/overview">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-file.svg" alt="" /></span>
+              <span><strong class="w_600">Developer Documentation</strong><span>Technical guides for integrating with Toku.</span></span>
+            </a>
+          </div>
+        </section>
+      </div>
+      
     </div>
-    <a class="demo" href="https://www.toku.com/get-started">Book a Demo</a>
-  </nav>
-  <main>
-  <section class="page">
-    <nav class="breadcrumbs"><a href="/toku-trust-center-preview/security-center/">Trust Center</a> / <a href="/toku-trust-center-preview/security-center/data-security/">Data Security</a> / <span>Cryptocurrency &amp; Custody Security</span></nav>
-    <p class="eyebrow">Data Security</p>
-    <h1>Cryptocurrency &amp; Custody Security</h1>
-    <p>Classification: External / Client-Facing | Contact: security@toku.com</p>
-  </section>
-  <section class="article-layout">
-    <aside class="side-nav">
-      <a href="/toku-trust-center-preview/security-center/data-security/">Data Security</a>
-      <a href="/toku-trust-center-preview/security-center/data-security/data-protection-and-encryption/">Data Protection &amp; Encryption</a><a href="/toku-trust-center-preview/security-center/data-security/api-and-integration-security/">API &amp; Integration Security</a><a href="/toku-trust-center-preview/security-center/data-security/cryptocurrency-and-custody-security/">Cryptocurrency &amp; Custody Security</a>
-    </aside>
-    <article class="article">
-      <h2>Non-Custody Model</h2>
-<p>Toku operates on a strict non-custody model. This is an architectural decision, not a policy choice. Toku never takes custody or control of client funds. Clients select their custody provider and keep full control of private keys and transaction approval.</p>
-<p>Toku&#39;s role is to calculate payroll settlement amounts, propose transactions to the custody platform, and confirm settlement after client-approved execution. Toku does not hold funds, private keys, or signing authority at any point.</p>
-<h2>Transaction Flow</h2>
-<p>Digital asset payment workflows follow a strict approval chain:</p>
-<ol><li>Preparation: Toku prepares payment instructions based on authorized payroll data.</li></ol>
-<ol><li>Proposal: Toku submits the transaction instruction to the client&#39;s custody provider via authenticated API, including recipient wallet address, amount, and internal reference ID.</li></ol>
-<ol><li>Client Approval: The client reviews and approves the transaction through their custody provider&#39;s interface, typically using multi-signature or policy-engine approval.</li></ol>
-<ol><li>Execution: The custody provider executes the approved transaction on the blockchain.</li></ol>
-<ol><li>Confirmation: Toku confirms settlement and updates payment records with the transaction hash and timestamp.</li></ol>
-<p>Toku cannot unilaterally execute any transaction. Client approval is enforced at the custody platform level, outside of Toku&#39;s infrastructure.</p>
-<h2>Asset and Network Controls</h2>
-<p>Asset and network configuration is governed through client-controlled custody settings, scoped API credentials, and approval workflows. Toku records the asset, network, amount, transaction hash, timestamp, and status needed for reconciliation and auditability.</p>
-<h2>Custody Provider Security Review</h2>
-<p>Custody providers are reviewed for security posture, access-control capabilities, API credential handling, approval workflows, and relevant compliance evidence before use in customer workflows.</p>
-<p>Each integration uses scoped API credentials that can propose transactions but cannot sign or execute them.</p>
-<h2>Wallet Security</h2>
-<p>Employee wallet addresses are collected through the Toku platform and stored encrypted (AES-256 at rest). Wallet addresses are used exclusively for routing approved payments. Toku does not have access to employee private keys or the ability to move funds from employee wallets.</p>
-<h2>Blockchain Transaction Integrity</h2>
-<p>All completed transactions are recorded with the on-chain transaction hash, providing an immutable, independently verifiable record of every payment. Clients and employees can verify any transaction directly on the relevant blockchain explorer.</p>
-<h2>Separation of Duties</h2>
-<p>The non-custody model creates a natural separation of duties. Toku handles calculation and proposal. The client handles approval and execution through their custody provider. No single party can unilaterally move funds. This is enforced at the infrastructure level, not by policy alone.</p>
-    </article>
-  </section>
-</main>
+    <div class="megaFooter p-dropdown-footer">
+      <span><strong class="tx-bold">Launching Token?</strong> Token payroll and employment with zero margin of error</span>
+      <a class="cta-main w-inline-block" href="https://www.toku.com/get-started">Book a Demo</a>
+    </div>
+  </div>
+</details><details class="marketingNavItem nav-item nav-dropdown w-dropdown" data-nav-group="solutions">
+  <summary class="nav-dropdown-toggle w-dropdown-toggle">Solutions</summary>
+  <div class="megaMenu products-dropdown-details w-dropdown-list">
+    <div class="megaInner p-dropdown-contentwrap">
+      <div class="megaColumns p-dropdown-grid">
+        <section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Solutions</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/solutions/for-startups">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-tour.svg" alt="" /></span>
+              <span><strong class="w_600">For Startups</strong><span>Launch global teams with compliant payroll support.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/solutions/for-midsize">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-dashboard.svg" alt="" /></span>
+              <span><strong class="w_600">For Mid-sized Companies</strong><span>Scale your workforce across borders.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/solutions/for-enterprises">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-kanban.svg" alt="" /></span>
+              <span><strong class="w_600">For Enterprise</strong><span>Run complex, multi-country payroll programs.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/partner-program">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-chat.svg" alt="" /></span>
+              <span><strong class="w_600">Partner Program</strong><span>Grow with Toku&#39;s partner network.</span></span>
+            </a>
+          </div>
+        </section>
+      </div>
+      
+    </div>
+    <div class="megaFooter p-dropdown-footer">
+      <span><strong class="tx-bold">Launching Token?</strong> Token payroll and employment with zero margin of error</span>
+      <a class="cta-main w-inline-block" href="https://www.toku.com/get-started">Book a Demo</a>
+    </div>
+  </div>
+</details><details class="marketingNavItem nav-item nav-dropdown w-dropdown" data-nav-group="resources">
+  <summary class="nav-dropdown-toggle w-dropdown-toggle">Resources</summary>
+  <div class="megaMenu res-dropdown-details w-dropdown-list">
+    <div class="megaInner res-dropdown-contentwrap-flex">
+      <div class="megaColumns p-dropdown-grid">
+        <section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Why Toku</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/stablecoin-payroll-page">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-course.svg" alt="" /></span>
+              <span><strong class="w_600">What is Stablecoin Payroll?</strong><span>A guide to how stablecoin compensation works.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/case-studies">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-file.svg" alt="" /></span>
+              <span><strong class="w_600">Case Studies</strong><span>See how teams use Toku for global payroll.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/why-toku">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-lock.svg" alt="" /></span>
+              <span><strong class="w_600">Why Use Toku</strong><span>Learn how Toku handles payroll, HR, and compliance.</span></span>
+            </a>
+          </div>
+        </section><section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Learn &amp; Connect</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/blog">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-blog.svg" alt="" /></span>
+              <span><strong class="w_600">Blog</strong><span>Insights, updates, and best practices from Toku.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/use-case">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-label.svg" alt="" /></span>
+              <span><strong class="w_600">Use Cases</strong><span>Real-world examples of global payroll workflows.</span></span>
+            </a>
+          </div>
+        </section>
+      </div>
+      
+    </div>
+    <div class="megaFooter p-dropdown-footer">
+      <span><strong class="tx-bold">Launching Token?</strong> Token payroll and employment with zero margin of error</span>
+      <a class="cta-main w-inline-block" href="https://www.toku.com/get-started">Book a Demo</a>
+    </div>
+  </div>
+</details><details class="marketingNavItem nav-item nav-dropdown w-dropdown" data-nav-group="company">
+  <summary class="nav-dropdown-toggle w-dropdown-toggle">Company</summary>
+  <div class="megaMenu com-nav w-dropdown-list">
+    <div class="megaInner com-dropdown-contentwrap">
+      <div class="megaColumns com-dropdown-grid">
+        <section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Company</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/about">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-user.svg" alt="" /></span>
+              <span><strong class="w_600">About Us</strong><span>See how we&#39;re creating great lives for great people.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://jobs.lever.co/toku/">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-job.svg" alt="" /></span>
+              <span><strong class="w_600">Careers</strong><span>Unleash your genius and maximize your potential.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/contact">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-mail.svg" alt="" /></span>
+              <span><strong class="w_600">Contact Us</strong><span>We&#39;re excited to help and eager to hear from you.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="/toku-trust-center-preview/security-center">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-lock.svg" alt="" /></span>
+              <span><strong class="w_600">Trust Center</strong><span>Review Toku&#39;s security posture and controls.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="#">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-bitcoin.svg" alt="" /></span>
+              <span><strong class="w_600">Affiliate Program</strong><span>Earn commission on qualified referrals.</span></span>
+            </a>
+          </div>
+        </section>
+      </div>
+      <aside class="megaFeature com-explore-sec">
+        <div class="featureTop dropdown-column-title flx"><span>Explore</span><a class="explore-link w-inline-block" href="https://www.toku.com/blog">View All</a></div>
+        <a class="featureCard article-card w-inline-block" href="/toku-trust-center-preview/security-center">
+          <span class="w_600">Toku Trust Center</span>
+          <p>Security posture, compliance evidence, and data protection practices.</p>
+        </a>
+      </aside>
+    </div>
+    <div class="megaFooter p-dropdown-footer">
+      <span><strong class="tx-bold">Launching Token?</strong> Token payroll and employment with zero margin of error</span>
+      <a class="cta-main w-inline-block" href="https://www.toku.com/get-started">Book a Demo</a>
+    </div>
+  </div>
+</details>
+      <a class="nav-link" href="https://www.toku.com/pricing">Pricing</a>
+      <a class="nav-link" href="https://www.toku.com/contact">Contact Us</a>
+    </nav>
+    <a class="headerCta cta-main w-inline-block" href="https://www.toku.com/get-started">Book a Demo</a>
+  </div>
+</header>
+    <main id="main" class="main"><section class="pageHero">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/toku-trust-center-preview/security-center/">Trust Center</a>
+  <span aria-hidden="true">/</span><a href="/toku-trust-center-preview/security-center/data-security/">Data Security</a>
+  <span aria-hidden="true">/</span><span>Cryptocurrency &amp; Custody Security</span>
+</nav>
+  <p class="eyebrow">Data Security</p>
+  <h1>Cryptocurrency &amp; Custody Security</h1>
+  <div class="metaGrid">
+    <span>Classification: External / Client-Facing</span><span>Contact: security@toku.com</span>
+  </div>
+</section>
+<section class="articleLayout">
+  <article class="articleContent article-wrap"><h2>Non-Custody Model</h2><p>Toku operates on a strict non-custody model. This is an architectural decision, not a policy choice. Toku never takes custody or control of client funds. Clients select their custody provider and keep full control of private keys and transaction approval.</p><p>Toku&#39;s role is to calculate payroll settlement amounts, propose transactions to the custody platform, and confirm settlement after client-approved execution. Toku does not hold funds, private keys, or signing authority at any point.</p><h2>Transaction Flow</h2><p>Digital asset payment workflows follow a strict approval chain:</p><ol class="contentList"><li>Preparation: Toku prepares payment instructions based on authorized payroll data.</li></ol><ol class="contentList"><li>Proposal: Toku submits the transaction instruction to the client&#39;s custody provider via authenticated API, including recipient wallet address, amount, and internal reference ID.</li></ol><ol class="contentList"><li>Client Approval: The client reviews and approves the transaction through their custody provider&#39;s interface, typically using multi-signature or policy-engine approval.</li></ol><ol class="contentList"><li>Execution: The custody provider executes the approved transaction on the blockchain.</li></ol><ol class="contentList"><li>Confirmation: Toku confirms settlement and updates payment records with the transaction hash and timestamp.</li></ol><p>Toku cannot unilaterally execute any transaction. Client approval is enforced at the custody platform level, outside of Toku&#39;s infrastructure.</p><h2>Asset and Network Controls</h2><p>Asset and network configuration is governed through client-controlled custody settings, scoped API credentials, and approval workflows. Toku records the asset, network, amount, transaction hash, timestamp, and status needed for reconciliation and auditability.</p><h2>Custody Provider Security Review</h2><p>Custody providers are reviewed for security posture, access-control capabilities, API credential handling, approval workflows, and relevant compliance evidence before use in customer workflows.</p><p>Each integration uses scoped API credentials that can propose transactions but cannot sign or execute them.</p><h2>Wallet Security</h2><p>Employee wallet addresses are collected through the Toku platform and stored encrypted (AES-256 at rest). Wallet addresses are used exclusively for routing approved payments. Toku does not have access to employee private keys or the ability to move funds from employee wallets.</p><h2>Blockchain Transaction Integrity</h2><p>All completed transactions are recorded with the on-chain transaction hash, providing an immutable, independently verifiable record of every payment. Clients and employees can verify any transaction directly on the relevant blockchain explorer.</p><h2>Separation of Duties</h2><p>The non-custody model creates a natural separation of duties. Toku handles calculation and proposal. The client handles approval and execution through their custody provider. No single party can unilaterally move funds. This is enforced at the infrastructure level, not by policy alone.</p></article>
+  <aside class="sideNav">
+    <h2>Data Security</h2>
+    <ul>
+      <li><a  href="/toku-trust-center-preview/security-center/data-security/data-protection-and-encryption/">Data Protection &amp; Encryption</a></li><li><a  href="/toku-trust-center-preview/security-center/data-security/api-and-integration-security/">API &amp; Integration Security</a></li><li><a aria-current="page" href="/toku-trust-center-preview/security-center/data-security/cryptocurrency-and-custody-security/">Cryptocurrency &amp; Custody Security</a></li>
+    </ul>
+  </aside>
+</section></main>
+  </div>
 </body>
 </html>

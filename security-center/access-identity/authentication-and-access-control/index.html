@@ -7,67 +7,195 @@
   <link rel="stylesheet" href="/toku-trust-center-preview/assets/styles.css" />
 </head>
 <body>
-  <header class="promo">Referred customers receive a 10% discount on all core offerings and solutions - up to $5,000. <a href="https://www.toku.com/contact">Contact us now!</a></header>
-  <nav class="site-nav">
-    <a class="logo" href="/toku-trust-center-preview/security-center/"><img src="/toku-trust-center-preview/assets/logo.svg" alt="Toku" /></a>
-    <div class="nav-links">
-      <a href="https://www.toku.com">Products</a>
-      <a href="https://www.toku.com">Solutions</a>
-      <a href="https://www.toku.com">Resources</a>
-      <a href="/toku-trust-center-preview/security-center/">Company / Trust Center</a>
-      <a href="https://www.toku.com/pricing">Pricing</a>
-      <a href="https://www.toku.com/contact">Contact Us</a>
+  <div class="page">
+    <a class="skipLink" href="#main">Skip to content</a>
+    <header class="siteHeader">
+  <div class="promoBar top-nav-padding">
+    <span>Referred customers receive a 10% discount on all core offerings and solutions - up to $5,000.</span>
+    <a class="top-nav-cta w-inline-block" href="https://www.toku.com/contact">Contact us now!</a>
+  </div>
+  <div class="header nav-padding mx_width">
+    <a class="brand nav-home w-inline-block" href="https://www.toku.com">
+      <img src="/toku-trust-center-preview/toku-assets/logo.svg" alt="Toku" class="logo" />
+    </a>
+    <nav class="nav nav-list-wrap hide-tb" aria-label="Toku site navigation">
+      <details class="marketingNavItem nav-item nav-dropdown w-dropdown" data-nav-group="products">
+  <summary class="nav-dropdown-toggle w-dropdown-toggle">Products</summary>
+  <div class="megaMenu products-dropdown-details w-dropdown-list">
+    <div class="megaInner p-dropdown-contentwrap">
+      <div class="megaColumns p-dropdown-grid _2-col-grid">
+        <section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Toku Payroll Platform</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/global-employer-of-record-platform">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-user.svg" alt="" /></span>
+              <span><strong class="w_600">Toku Employer of Record</strong><span>Expand into new markets fast with compliant hiring.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/aor">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-product.svg" alt="" /></span>
+              <span><strong class="w_600">Toku Agent of Record</strong><span>Onboard, pay, and manage contractors.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/toku-payroll">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-banking.svg" alt="" /></span>
+              <span><strong class="w_600">Toku Global Payroll</strong><span>Pay teams globally with compliance and tax automation.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/token-grant-administration">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-analytics.svg" alt="" /></span>
+              <span><strong class="w_600">Token Grant Administration</strong><span>Handle grants, cap tables, and payroll globally.</span></span>
+            </a>
+          </div>
+        </section><section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Payroll API</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://docs.toku.com/integration-guide/overview">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-file.svg" alt="" /></span>
+              <span><strong class="w_600">Developer Documentation</strong><span>Technical guides for integrating with Toku.</span></span>
+            </a>
+          </div>
+        </section>
+      </div>
+      
     </div>
-    <a class="demo" href="https://www.toku.com/get-started">Book a Demo</a>
-  </nav>
-  <main>
-  <section class="page">
-    <nav class="breadcrumbs"><a href="/toku-trust-center-preview/security-center/">Trust Center</a> / <a href="/toku-trust-center-preview/security-center/access-identity/">Access &amp; Identity</a> / <span>Authentication &amp; Access Control</span></nav>
-    <p class="eyebrow">Access &amp; Identity</p>
-    <h1>Authentication &amp; Access Control</h1>
-    <p>Classification: External / Client-Facing | Contact: security@toku.com</p>
-  </section>
-  <section class="article-layout">
-    <aside class="side-nav">
-      <a href="/toku-trust-center-preview/security-center/access-identity/">Access &amp; Identity</a>
-      <a href="/toku-trust-center-preview/security-center/access-identity/authentication-and-access-control/">Authentication &amp; Access Control</a><a href="/toku-trust-center-preview/security-center/access-identity/vendor-and-personnel-security/">Vendor &amp; Personnel Security</a>
-    </aside>
-    <article class="article">
-      <h2>Single Sign-On (SSO)</h2>
-<p>Toku uses SAML 2.0 SSO to centralize client-facing authentication and reduce password-based risk. Identity provider configuration is governed through controlled setup and metadata exchange.</p>
-<p>Toku&#39;s client-facing authentication is managed through an identity platform that handles the SSO lifecycle, including SAML assertion processing, session creation, and identity provider metadata management.</p>
-<p>Internally, Toku uses centralized SSO for administrative access to its own systems, ensuring consistent authentication policies across internal tooling.</p>
-<h2>Multi-Factor Authentication (MFA)</h2>
-<p>MFA is enforced using TOTP-based verification (time-based one-time passwords). MFA checks run before session-level authorization, meaning a valid second factor is required before access is granted.</p>
-<p>MFA is enforced for all Toku employees. Client users are strongly encouraged to enable MFA. MFA enrollment events are logged with timestamps and source IP addresses.</p>
-<h2>Automated User Provisioning (SCIM)</h2>
-<p>Where SCIM 2.0 is configured, user lifecycle events are automated to reduce stale access. Provisioning and deprovisioning events are tied to identity-provider updates and retained in audit logs.</p>
-<h2>Role-Based Access Control (RBAC)</h2>
-<p>Role-based access control is enforced at every level:</p>
-<ul><li>Client administrators can only view and manage data for their own organization. Cross-tenant access is prevented by logical database isolation.</li></ul>
-<ul><li>Toku internal staff follow least-privilege access. Access is granted only to the systems and data required for a specific role.</li></ul>
-<ul><li>All internal access to production data is logged.</li></ul>
-<p>Access requests go through a centralized identity management platform with manager and system owner approval required. Provisioning is automated on approval with a full audit trail.</p>
-<h2>Access Reviews</h2>
-<p>Toku conducts systematic access reviews to ensure access remains appropriate:</p>
-<ul><li>Quarterly reviews for critical systems and privileged accounts.</li></ul>
-<ul><li>Annual reviews for standard user access across all systems.</li></ul>
-<ul><li>Ad-hoc reviews triggered by role changes or security events.</li></ul>
-<p>Each review covers account status, permission levels, privileged access, service accounts, and third-party vendor access.</p>
-<p>Employee compliance status is continuously monitored, including endpoint security requirements, hard drive encryption, and screen lock policies, providing automated verification that access controls are maintained.</p>
-<h2>Session Management</h2>
-<p>Session tokens are invalidated immediately upon password reset. Password reset tokens expire within 24 hours and are single-use. Old password reset tokens are automatically invalidated when a new token is generated. Rate limiting is enforced on all authentication endpoints, including password reset and MFA verification.</p>
-<h2>Post-Employment Access</h2>
-<p>Toku uses a deliberate post-employment access model built for payroll systems:</p>
-<ul><li>Administrative and active system access is revoked immediately on separation.</li></ul>
-<ul><li>Historical read access to pay stubs, tax documents, and payment history is retained until the user requests deletion. Employees have a right to their historical compensation data.</li></ul>
-<ul><li>Personal wallet access is retained since employees may hold personal cryptocurrency funds.</li></ul>
-<p>This model removes active access immediately while preserving employee rights to their own records.</p>
-<h2>Authentication Event Logging</h2>
-<p>All authentication events are logged with full detail: successful and failed login attempts, password changes, MFA enrollment and verification events, account lockouts, session creation and termination, and source IP addresses with geolocation.</p>
-<p>Authentication logs are retained for a minimum of 90 days in active storage and 1 year in archives.</p>
-    </article>
-  </section>
-</main>
+    <div class="megaFooter p-dropdown-footer">
+      <span><strong class="tx-bold">Launching Token?</strong> Token payroll and employment with zero margin of error</span>
+      <a class="cta-main w-inline-block" href="https://www.toku.com/get-started">Book a Demo</a>
+    </div>
+  </div>
+</details><details class="marketingNavItem nav-item nav-dropdown w-dropdown" data-nav-group="solutions">
+  <summary class="nav-dropdown-toggle w-dropdown-toggle">Solutions</summary>
+  <div class="megaMenu products-dropdown-details w-dropdown-list">
+    <div class="megaInner p-dropdown-contentwrap">
+      <div class="megaColumns p-dropdown-grid">
+        <section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Solutions</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/solutions/for-startups">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-tour.svg" alt="" /></span>
+              <span><strong class="w_600">For Startups</strong><span>Launch global teams with compliant payroll support.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/solutions/for-midsize">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-dashboard.svg" alt="" /></span>
+              <span><strong class="w_600">For Mid-sized Companies</strong><span>Scale your workforce across borders.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/solutions/for-enterprises">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-kanban.svg" alt="" /></span>
+              <span><strong class="w_600">For Enterprise</strong><span>Run complex, multi-country payroll programs.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/partner-program">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-chat.svg" alt="" /></span>
+              <span><strong class="w_600">Partner Program</strong><span>Grow with Toku&#39;s partner network.</span></span>
+            </a>
+          </div>
+        </section>
+      </div>
+      
+    </div>
+    <div class="megaFooter p-dropdown-footer">
+      <span><strong class="tx-bold">Launching Token?</strong> Token payroll and employment with zero margin of error</span>
+      <a class="cta-main w-inline-block" href="https://www.toku.com/get-started">Book a Demo</a>
+    </div>
+  </div>
+</details><details class="marketingNavItem nav-item nav-dropdown w-dropdown" data-nav-group="resources">
+  <summary class="nav-dropdown-toggle w-dropdown-toggle">Resources</summary>
+  <div class="megaMenu res-dropdown-details w-dropdown-list">
+    <div class="megaInner res-dropdown-contentwrap-flex">
+      <div class="megaColumns p-dropdown-grid">
+        <section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Why Toku</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/stablecoin-payroll-page">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-course.svg" alt="" /></span>
+              <span><strong class="w_600">What is Stablecoin Payroll?</strong><span>A guide to how stablecoin compensation works.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/case-studies">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-file.svg" alt="" /></span>
+              <span><strong class="w_600">Case Studies</strong><span>See how teams use Toku for global payroll.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/why-toku">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-lock.svg" alt="" /></span>
+              <span><strong class="w_600">Why Use Toku</strong><span>Learn how Toku handles payroll, HR, and compliance.</span></span>
+            </a>
+          </div>
+        </section><section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Learn &amp; Connect</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/blog">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-blog.svg" alt="" /></span>
+              <span><strong class="w_600">Blog</strong><span>Insights, updates, and best practices from Toku.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/use-case">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-label.svg" alt="" /></span>
+              <span><strong class="w_600">Use Cases</strong><span>Real-world examples of global payroll workflows.</span></span>
+            </a>
+          </div>
+        </section>
+      </div>
+      
+    </div>
+    <div class="megaFooter p-dropdown-footer">
+      <span><strong class="tx-bold">Launching Token?</strong> Token payroll and employment with zero margin of error</span>
+      <a class="cta-main w-inline-block" href="https://www.toku.com/get-started">Book a Demo</a>
+    </div>
+  </div>
+</details><details class="marketingNavItem nav-item nav-dropdown w-dropdown" data-nav-group="company">
+  <summary class="nav-dropdown-toggle w-dropdown-toggle">Company</summary>
+  <div class="megaMenu com-nav w-dropdown-list">
+    <div class="megaInner com-dropdown-contentwrap">
+      <div class="megaColumns com-dropdown-grid">
+        <section class="megaSection dropdown-grid-column">
+          <h2 class="dropdown-column-title">Company</h2>
+          <div class="megaLinks dropdown-column-det">
+            <a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/about">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-user.svg" alt="" /></span>
+              <span><strong class="w_600">About Us</strong><span>See how we&#39;re creating great lives for great people.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://jobs.lever.co/toku/">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-job.svg" alt="" /></span>
+              <span><strong class="w_600">Careers</strong><span>Unleash your genius and maximize your potential.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="https://www.toku.com/contact">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-mail.svg" alt="" /></span>
+              <span><strong class="w_600">Contact Us</strong><span>We&#39;re excited to help and eager to hear from you.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="/toku-trust-center-preview/security-center">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-lock.svg" alt="" /></span>
+              <span><strong class="w_600">Trust Center</strong><span>Review Toku&#39;s security posture and controls.</span></span>
+            </a><a class="megaLink dropdown-link-wrap w-inline-block" href="#">
+              <span class="megaIcon dropdown-link-icon" aria-hidden="true"><img src="/toku-trust-center-preview/assets/icons/navbar/ic-bitcoin.svg" alt="" /></span>
+              <span><strong class="w_600">Affiliate Program</strong><span>Earn commission on qualified referrals.</span></span>
+            </a>
+          </div>
+        </section>
+      </div>
+      <aside class="megaFeature com-explore-sec">
+        <div class="featureTop dropdown-column-title flx"><span>Explore</span><a class="explore-link w-inline-block" href="https://www.toku.com/blog">View All</a></div>
+        <a class="featureCard article-card w-inline-block" href="/toku-trust-center-preview/security-center">
+          <span class="w_600">Toku Trust Center</span>
+          <p>Security posture, compliance evidence, and data protection practices.</p>
+        </a>
+      </aside>
+    </div>
+    <div class="megaFooter p-dropdown-footer">
+      <span><strong class="tx-bold">Launching Token?</strong> Token payroll and employment with zero margin of error</span>
+      <a class="cta-main w-inline-block" href="https://www.toku.com/get-started">Book a Demo</a>
+    </div>
+  </div>
+</details>
+      <a class="nav-link" href="https://www.toku.com/pricing">Pricing</a>
+      <a class="nav-link" href="https://www.toku.com/contact">Contact Us</a>
+    </nav>
+    <a class="headerCta cta-main w-inline-block" href="https://www.toku.com/get-started">Book a Demo</a>
+  </div>
+</header>
+    <main id="main" class="main"><section class="pageHero">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/toku-trust-center-preview/security-center/">Trust Center</a>
+  <span aria-hidden="true">/</span><a href="/toku-trust-center-preview/security-center/access-identity/">Access &amp; Identity</a>
+  <span aria-hidden="true">/</span><span>Authentication &amp; Access Control</span>
+</nav>
+  <p class="eyebrow">Access &amp; Identity</p>
+  <h1>Authentication &amp; Access Control</h1>
+  <div class="metaGrid">
+    <span>Classification: External / Client-Facing</span><span>Contact: security@toku.com</span>
+  </div>
+</section>
+<section class="articleLayout">
+  <article class="articleContent article-wrap"><h2>Single Sign-On (SSO)</h2><p>Toku uses SAML 2.0 SSO to centralize client-facing authentication and reduce password-based risk. Identity provider configuration is governed through controlled setup and metadata exchange.</p><p>Toku&#39;s client-facing authentication is managed through an identity platform that handles the SSO lifecycle, including SAML assertion processing, session creation, and identity provider metadata management.</p><p>Internally, Toku uses centralized SSO for administrative access to its own systems, ensuring consistent authentication policies across internal tooling.</p><h2>Multi-Factor Authentication (MFA)</h2><p>MFA is enforced using TOTP-based verification (time-based one-time passwords). MFA checks run before session-level authorization, meaning a valid second factor is required before access is granted.</p><p>MFA is enforced for all Toku employees. Client users are strongly encouraged to enable MFA. MFA enrollment events are logged with timestamps and source IP addresses.</p><h2>Automated User Provisioning (SCIM)</h2><p>Where SCIM 2.0 is configured, user lifecycle events are automated to reduce stale access. Provisioning and deprovisioning events are tied to identity-provider updates and retained in audit logs.</p><h2>Role-Based Access Control (RBAC)</h2><p>Role-based access control is enforced at every level:</p><ul class="contentList"><li>Client administrators can only view and manage data for their own organization. Cross-tenant access is prevented by logical database isolation.</li></ul><ul class="contentList"><li>Toku internal staff follow least-privilege access. Access is granted only to the systems and data required for a specific role.</li></ul><ul class="contentList"><li>All internal access to production data is logged.</li></ul><p>Access requests go through a centralized identity management platform with manager and system owner approval required. Provisioning is automated on approval with a full audit trail.</p><h2>Access Reviews</h2><p>Toku conducts systematic access reviews to ensure access remains appropriate:</p><ul class="contentList"><li>Quarterly reviews for critical systems and privileged accounts.</li></ul><ul class="contentList"><li>Annual reviews for standard user access across all systems.</li></ul><ul class="contentList"><li>Ad-hoc reviews triggered by role changes or security events.</li></ul><p>Each review covers account status, permission levels, privileged access, service accounts, and third-party vendor access.</p><p>Employee compliance status is continuously monitored, including endpoint security requirements, hard drive encryption, and screen lock policies, providing automated verification that access controls are maintained.</p><h2>Session Management</h2><p>Session tokens are invalidated immediately upon password reset. Password reset tokens expire within 24 hours and are single-use. Old password reset tokens are automatically invalidated when a new token is generated. Rate limiting is enforced on all authentication endpoints, including password reset and MFA verification.</p><h2>Post-Employment Access</h2><p>Toku uses a deliberate post-employment access model built for payroll systems:</p><ul class="contentList"><li>Administrative and active system access is revoked immediately on separation.</li></ul><ul class="contentList"><li>Historical read access to pay stubs, tax documents, and payment history is retained until the user requests deletion. Employees have a right to their historical compensation data.</li></ul><ul class="contentList"><li>Personal wallet access is retained since employees may hold personal cryptocurrency funds.</li></ul><p>This model removes active access immediately while preserving employee rights to their own records.</p><h2>Authentication Event Logging</h2><p>All authentication events are logged with full detail: successful and failed login attempts, password changes, MFA enrollment and verification events, account lockouts, session creation and termination, and source IP addresses with geolocation.</p><p>Authentication logs are retained for a minimum of 90 days in active storage and 1 year in archives.</p></article>
+  <aside class="sideNav">
+    <h2>Access &amp; Identity</h2>
+    <ul>
+      <li><a aria-current="page" href="/toku-trust-center-preview/security-center/access-identity/authentication-and-access-control/">Authentication &amp; Access Control</a></li><li><a  href="/toku-trust-center-preview/security-center/access-identity/vendor-and-personnel-security/">Vendor &amp; Personnel Security</a></li>
+    </ul>
+  </aside>
+</section></main>
+  </div>
 </body>
 </html>
