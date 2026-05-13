@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Incident Response &amp; Management | Toku Trust Center</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="promo">Referred customers receive a 10% discount on all core offerings and solutions - up to $5,000. <a href="https://www.toku.com/contact">Contact us now!</a></header>
+  <nav class="site-nav">
+    <a class="logo" href="/security-center/"><img src="/assets/logo.svg" alt="Toku" /></a>
+    <div class="nav-links">
+      <a href="https://www.toku.com">Products</a>
+      <a href="https://www.toku.com">Solutions</a>
+      <a href="https://www.toku.com">Resources</a>
+      <a href="/security-center/">Company / Trust Center</a>
+      <a href="https://www.toku.com/pricing">Pricing</a>
+      <a href="https://www.toku.com/contact">Contact Us</a>
+    </div>
+    <a class="demo" href="https://www.toku.com/get-started">Book a Demo</a>
+  </nav>
+  <main>
+  <section class="page">
+    <nav class="breadcrumbs"><a href="/security-center/">Trust Center</a> / <a href="/security-center/resilience-compliance/">Resilience &amp; Compliance</a> / <span>Incident Response &amp; Management</span></nav>
+    <p class="eyebrow">Resilience &amp; Compliance</p>
+    <h1>Incident Response &amp; Management</h1>
+    <p>Classification: External / Client-Facing | Contact: security@toku.com</p>
+  </section>
+  <section class="article-layout">
+    <aside class="side-nav">
+      <a href="/security-center/resilience-compliance/">Resilience &amp; Compliance</a>
+      <a href="/security-center/resilience-compliance/incident-response-and-management/">Incident Response &amp; Management</a><a href="/security-center/resilience-compliance/business-continuity-and-disaster-recovery/">Business Continuity &amp; Disaster Recovery</a><a href="/security-center/resilience-compliance/compliance-and-certifications/">Compliance &amp; Certifications</a>
+    </aside>
+    <article class="article">
+      <h2>Incident Response Framework</h2>
+<p>Toku maintains an Incident Management Response Plan covering the full lifecycle of security and operational incidents: detection, triage, response, resolution, and postmortem. The plan is built for the specific risks of SaaS payroll and cryptocurrency settlement.</p>
+<h2>Severity Classification</h2>
+<div class="table-wrap"><table><thead><tr><th>Level</th><th>Description</th><th>Response Expectations</th></tr></thead><tbody><tr><td>SEV-1 Critical</td><td>Broad business impact or regulatory consequence (e.g., global payroll deadline missed, large-scale data breach, payment transfer failures for multiple customers on payday)</td><td>All-hands response, Incident Commander and executives engaged within 15 minutes, external communications within 30 minutes, hourly updates until resolved</td></tr><tr><td>SEV-2 High</td><td>Significant functionality impact, multiple customers affected (e.g., payroll API outage in a region)</td><td>Response within 15 minutes, customer communication within 1 hour, resolution within same business day where feasible</td></tr><tr><td>SEV-3 Moderate</td><td>Limited impact or clear workaround (e.g., payroll delay for a single customer)</td><td>Response within 1 hour, resolution within 1 business day</td></tr><tr><td>SEV-4 Low</td><td>Minimal impact, does not affect payroll execution (e.g., slow report loading)</td><td>Tracked and resolved through normal sprint cycle</td></tr></tbody></table></div>
+<h2>Incident Lifecycle</h2>
+<h3>Detection</h3>
+<p>Incidents are detected through multiple channels: automated application and infrastructure monitoring, anomaly detection, transaction monitoring, payroll data validation jobs, on-call alerting, human reports from employees or customers, and partner escalation from integration partners.</p>
+<h3>Triage and Classification</h3>
+<p>The Incident Commander declares the incident, assigns severity, creates an incident ticket with timestamp, description, and severity, opens a dedicated Slack war room channel, and assigns all roles.</p>
+<h3>Response and Mitigation</h3>
+<p>Immediate containment may include pausing affected workflows, disabling failing integrations, revoking compromised credentials, restoring queues, deploying fixes, and validating recovery before service is resumed.</p>
+<h3>Communication</h3>
+<p>Internal updates flow through the Slack war room with 15-minute stand-ups for SEV-1 incidents. External communications include direct email notifications to affected customers and regulatory notifications within statutory windows (e.g., GDPR 72-hour requirement).</p>
+<h3>Resolution and Postmortem</h3>
+<p>Technical validation that systems are restored, reconciliation of payroll data and financial transactions, customer communication confirming closure, and a blameless postmortem within 5 business days. Root cause analysis and corrective actions are documented and tracked.</p>
+<h2>Roles and Responsibilities</h2>
+<div class="table-wrap"><table><thead><tr><th>Role</th><th>Responsibility</th></tr></thead><tbody><tr><td>Incident Commander (IC)</td><td>Owns the incident from declaration through closure. Manages severity, tasking, and decision log.</td></tr><tr><td>Technical Lead</td><td>Diagnoses root cause, leads remediation, owns rollback/hotfix decisions.</td></tr><tr><td>Communications Lead</td><td>Prepares internal updates, status page posts, and customer emails. Works with Legal before external release.</td></tr><tr><td>Legal and Compliance Advisor</td><td>Assesses regulatory reporting obligations (GDPR, SEC, FinCEN). Provides go/no-go on communications.</td></tr><tr><td>Customer Success Liaison</td><td>Coordinates direct customer outreach and ensures front-line staff are briefed.</td></tr><tr><td>Payroll Operations Lead</td><td>Executes payroll reruns, ensures corrections, validates employee payments.</td></tr><tr><td>Executive Sponsor</td><td>Provides authority, unblocks resources. Typically CEO or CTO.</td></tr></tbody></table></div>
+<h2>Tabletop Exercises</h2>
+<p>Toku runs quarterly tabletop exercises facilitated by the Security/Compliance team. Scenarios include payment rail disruption, integration outages, security events involving employee data, and payroll calculation incidents.</p>
+<p>Exercises include live role assignment, timed injects (media requests, partner outages, customer social media posts), decision-point drills, and conclude with a hotwash and improvement log.</p>
+<p>Evaluation metrics: Mean Time to Detection (MTTD), Mean Time to Mitigation (MTTM), communications accuracy, and stakeholder confidence.</p>
+<h2>Incident Notification to Clients</h2>
+<p>Toku notifies affected clients within 48 hours of confirming a security event involving customer data or impacting operations. Initial notification may be preliminary pending full investigation, with regular updates throughout.</p>
+    </article>
+  </section>
+</main>
+</body>
+</html>

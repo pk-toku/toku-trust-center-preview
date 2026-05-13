@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Infrastructure &amp; Network Security | Toku Trust Center</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="promo">Referred customers receive a 10% discount on all core offerings and solutions - up to $5,000. <a href="https://www.toku.com/contact">Contact us now!</a></header>
+  <nav class="site-nav">
+    <a class="logo" href="/security-center/"><img src="/assets/logo.svg" alt="Toku" /></a>
+    <div class="nav-links">
+      <a href="https://www.toku.com">Products</a>
+      <a href="https://www.toku.com">Solutions</a>
+      <a href="https://www.toku.com">Resources</a>
+      <a href="/security-center/">Company / Trust Center</a>
+      <a href="https://www.toku.com/pricing">Pricing</a>
+      <a href="https://www.toku.com/contact">Contact Us</a>
+    </div>
+    <a class="demo" href="https://www.toku.com/get-started">Book a Demo</a>
+  </nav>
+  <main>
+  <section class="page">
+    <nav class="breadcrumbs"><a href="/security-center/">Trust Center</a> / <a href="/security-center/platform-security/">Platform Security</a> / <span>Infrastructure &amp; Network Security</span></nav>
+    <p class="eyebrow">Platform Security</p>
+    <h1>Infrastructure &amp; Network Security</h1>
+    <p>Classification: External / Client-Facing | Contact: security@toku.com</p>
+  </section>
+  <section class="article-layout">
+    <aside class="side-nav">
+      <a href="/security-center/platform-security/">Platform Security</a>
+      <a href="/security-center/platform-security/infrastructure-and-network-security/">Infrastructure &amp; Network Security</a><a href="/security-center/platform-security/endpoint-security/">Endpoint Security</a><a href="/security-center/platform-security/application-security-and-secure-development/">Application Security &amp; Secure Development</a>
+    </aside>
+    <article class="article">
+      <h2>Hosting Environment</h2>
+<p>Toku production infrastructure runs in United States cloud data center regions with independent SOC 2 certification coverage.</p>
+<p>Each customer&#39;s data is logically isolated at the database level. This provides per-client data isolation, defined security boundaries, simplified audit trails, and separate access controls per customer.</p>
+<h2>Network Architecture</h2>
+<p>Production, staging, and development environments are segmented through network isolation. Direct database access from external networks is blocked.</p>
+<p>All internal infrastructure access routes through zero-trust network access. Only authenticated, authorized devices can reach production resources, and VPN traffic is encrypted end-to-end.</p>
+<h2>Web Application Firewall &amp; DDoS Protection</h2>
+<p>A web application firewall is deployed on all application-layer traffic entering Toku&#39;s infrastructure. The WAF provides:</p>
+<ul><li>DDoS mitigation at the network and application layers</li></ul>
+<ul><li>Bot detection and automated blocking</li></ul>
+<ul><li>Rate limiting on all endpoints</li></ul>
+<ul><li>Request filtering for known attack patterns (SQLi, XSS, CSRF)</li></ul>
+<ul><li>HSTS enforcement on all public endpoints</li></ul>
+<p>All traffic to Toku&#39;s platform routes through the WAF before reaching application servers.</p>
+<h2>Network Segmentation</h2>
+<p>Toku enforces strict segmentation between environments:</p>
+<ul><li>Production is isolated from staging and development.</li></ul>
+<ul><li>Staging mirrors production security controls but uses masked/scrubbed data.</li></ul>
+<ul><li>Development environments have production-equivalent security configurations but no connectivity to production databases.</li></ul>
+<ul><li>PII is scrubbed before any data is used in non-production environments.</li></ul>
+<h2>Infrastructure Monitoring</h2>
+<p>Toku uses multiple monitoring layers to detect anomalies, performance issues, and security events:</p>
+<ul><li>Infrastructure monitoring for performance tracking and alerting.</li></ul>
+<ul><li>Real-time application error tracking and exception monitoring.</li></ul>
+<ul><li>PII-excluded analytics and anomaly detection.</li></ul>
+<ul><li>Database logging with enhanced audit trails for all data access and modifications.</li></ul>
+<ul><li>Automated alerting on integration API failures or anomalous behavior.</li></ul>
+<ul><li>Continuous compliance monitoring to verify that infrastructure security controls operate effectively.</li></ul>
+<p>All monitoring systems feed into centralized alerting with an on-call escalation policy ensuring continuous coverage.</p>
+<h2>Database Security</h2>
+<p>All databases use AES-256 encryption at rest, managed through the cloud provider&#39;s key management service. Direct database access from external networks is blocked at the network level. All database queries involving sensitive data are logged.</p>
+<p>Each client&#39;s data is logically isolated at the database level. One client&#39;s queries cannot reach another client&#39;s records.</p>
+<h2>Key Infrastructure Controls Summary</h2>
+<div class="table-wrap"><table><thead><tr><th>Control</th><th>Implementation</th></tr></thead><tbody><tr><td>Cloud Provider</td><td>US cloud regions with SOC 2 certification coverage</td></tr><tr><td>WAF / DDoS</td><td>Web application firewall on all ingress traffic</td></tr><tr><td>VPN</td><td>Zero-trust VPN access</td></tr><tr><td>Network Segmentation</td><td>Full isolation between prod, staging, dev</td></tr><tr><td>Database Isolation</td><td>Logical tenant isolation per client</td></tr><tr><td>Monitoring</td><td>Infrastructure monitoring, application error monitoring, database audit logs</td></tr><tr><td>External DB Access</td><td>Blocked at network level</td></tr></tbody></table></div>
+    </article>
+  </section>
+</main>
+</body>
+</html>

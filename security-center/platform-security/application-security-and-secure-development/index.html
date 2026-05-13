@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Application Security &amp; Secure Development | Toku Trust Center</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="promo">Referred customers receive a 10% discount on all core offerings and solutions - up to $5,000. <a href="https://www.toku.com/contact">Contact us now!</a></header>
+  <nav class="site-nav">
+    <a class="logo" href="/security-center/"><img src="/assets/logo.svg" alt="Toku" /></a>
+    <div class="nav-links">
+      <a href="https://www.toku.com">Products</a>
+      <a href="https://www.toku.com">Solutions</a>
+      <a href="https://www.toku.com">Resources</a>
+      <a href="/security-center/">Company / Trust Center</a>
+      <a href="https://www.toku.com/pricing">Pricing</a>
+      <a href="https://www.toku.com/contact">Contact Us</a>
+    </div>
+    <a class="demo" href="https://www.toku.com/get-started">Book a Demo</a>
+  </nav>
+  <main>
+  <section class="page">
+    <nav class="breadcrumbs"><a href="/security-center/">Trust Center</a> / <a href="/security-center/platform-security/">Platform Security</a> / <span>Application Security &amp; Secure Development</span></nav>
+    <p class="eyebrow">Platform Security</p>
+    <h1>Application Security &amp; Secure Development</h1>
+    <p>Classification: External / Client-Facing | Contact: security@toku.com</p>
+  </section>
+  <section class="article-layout">
+    <aside class="side-nav">
+      <a href="/security-center/platform-security/">Platform Security</a>
+      <a href="/security-center/platform-security/infrastructure-and-network-security/">Infrastructure &amp; Network Security</a><a href="/security-center/platform-security/endpoint-security/">Endpoint Security</a><a href="/security-center/platform-security/application-security-and-secure-development/">Application Security &amp; Secure Development</a>
+    </aside>
+    <article class="article">
+      <h2>Secure Development Lifecycle</h2>
+<p>Toku follows a secure development lifecycle that integrates security checks into every phase of delivery, from design through deployment.</p>
+<p>All code changes require peer review before merging to production. Security-focused reviews are required for changes touching authentication, authorization, payment flows, API integrations, or data handling.</p>
+<h2>Third-Party Security Audits and Penetration Testing</h2>
+<p>Toku engages third-party firms for independent security audits and penetration testing on a quarterly basis. Findings are tracked to resolution with code changes reviewed and merged. Penetration testing reports are available to clients under NDA.</p>
+<h2>Vulnerability Management</h2>
+<p>Toku maintains a multi-layered vulnerability management program:</p>
+<ul><li>Automated dependency scanning runs continuously against the codebase, monitoring for known CVEs across the application stack.</li></ul>
+<ul><li>Vulnerability scan results are triaged by severity, with critical and high-severity issues addressed on an expedited timeline.</li></ul>
+<ul><li>Automated static analysis runs on all code changes to catch common vulnerability patterns before production.</li></ul>
+<ul><li>Findings are tracked in a centralized tracker with assigned ownership and resolution timelines.</li></ul>
+<h2>Change Management</h2>
+<p>Toku&#39;s change management process ensures that all modifications to production systems are reviewed, approved, and auditable:</p>
+<ol><li>Change request submitted with description and risk assessment.</li></ol>
+<ol><li>Technical and security review by engineering peers.</li></ol>
+<ol><li>Leadership approval for significant changes.</li></ol>
+<ol><li>Automated deployment through CI/CD pipeline.</li></ol>
+<ol><li>Post-deployment validation and monitoring.</li></ol>
+<p>For emergency changes, an expedited process is available with retroactive review required within 24 hours and executive approval requirements.</p>
+<h2>Code Security Controls</h2>
+<p>Before any code reaches production, the following controls are enforced:</p>
+<ul><li>Mandatory peer review for all code changes.</li></ul>
+<ul><li>Security-focused review for sensitive changes (auth, payments, data handling).</li></ul>
+<ul><li>Automated static analysis to detect vulnerabilities.</li></ul>
+<ul><li>Continuous dependency scanning for vulnerable libraries.</li></ul>
+<ul><li>All automated tests must pass before code can be merged.</li></ul>
+<ul><li>No secrets, credentials, or API keys are permitted in source code.</li></ul>
+<h2>Secret Management</h2>
+<p>All application secrets, API credentials, and integration tokens are stored in encrypted secret management infrastructure. Secrets are never committed to source code, logged in application output, or included in error messages. Access to secrets is restricted by role and logged.</p>
+<h2>Security Event Logging</h2>
+<p>Toku captures security-relevant events across the application layer:</p>
+<ul><li>Authentication events: logins, password changes, MFA events, account lockouts</li></ul>
+<ul><li>Authorization changes: permission changes, role assignments, privilege escalation</li></ul>
+<ul><li>Administrative actions: user account changes, configuration updates, policy changes</li></ul>
+<ul><li>Data access: sensitive data queries, file downloads, API calls</li></ul>
+<ul><li>Network activity: source IPs, geolocation, VPN connections</li></ul>
+<ul><li>System changes: software installations, configuration modifications, patches</li></ul>
+<p>Logs are retained per Toku&#39;s data retention policy.</p>
+<h2>Compliance Automation</h2>
+<p>Toku uses a compliance automation platform for continuous monitoring of security controls, employee compliance status, and SOC 2 evidence collection. The platform verifies that controls are operating as expected, including hard drive encryption, screen lock policies, and endpoint protection status. All employees complete annual compliance recertification.</p>
+<h2>Security Monitoring and Analytics</h2>
+<p>Application analytics and monitoring are configured to exclude PII from tracking. Monitoring covers application errors, infrastructure health, performance alerting, and anomalous behavior without storing personally identifiable information in analytics events.</p>
+<h2>Log Integrity Protection</h2>
+<p>Toku implements protections against log tampering:</p>
+<ul><li>Role-based access limiting log access to the security team only.</li></ul>
+<ul><li>All log access is itself logged and monitored.</li></ul>
+<ul><li>Log retention policies enforced across all systems.</li></ul>
+    </article>
+  </section>
+</main>
+</body>
+</html>

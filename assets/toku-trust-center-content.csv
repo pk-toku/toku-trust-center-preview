@@ -1,0 +1,889 @@
+"content_type","title","slug","parent_category","url_path","summary","metadata","body_markdown"
+"overview","Toku Trust Center","trust-center","","/security-center","Toku processes sensitive employee data, compensation records, and digital asset transactions across 100+ countries. This Trust Center covers how we protect that data at every layer: infrastructure, network, application, endpoint, and operational process.","","Toku processes sensitive employee data, compensation records, and digital asset transactions across 100+ countries. This Trust Center covers how we protect that data at every layer: infrastructure, network, application, endpoint, and operational process."
+"category","Security Overview","security-overview","","/security-center/security-overview","A high-level introduction to Toku security principles, layered controls, and security operating model.","","Introduction to Toku Security
+
+Toku builds security into the way sensitive employee data, compensation records, integrations, and digital asset workflows are designed, operated, and monitored. This overview explains the security model that anchors the rest of the Trust Center."
+"article","Introduction to Toku Security","introduction-to-toku-security","Security Overview","/security-center/security-overview/introduction-to-toku-security","A high-level introduction to Toku security principles, layered controls, and security operating model.","Classification: External / Client-Facing | Contact: security@toku.com","## Security by Design
+
+Toku processes sensitive employee, compensation, payroll, and digital asset data. Security is therefore treated as an architectural requirement, not an after-the-fact checklist. Controls are designed into infrastructure, application development, access management, data handling, monitoring, incident response, and compliance operations.
+
+The Trust Center is organized around the controls that protect customer data and production systems: infrastructure and application security, data protection, access governance, resilience, compliance, and ongoing security investments.
+
+## Layered Security Model
+
+Toku uses a layered security model so that no single control is responsible for protecting the platform. Network isolation, encryption, identity controls, endpoint requirements, secure development practices, monitoring, and audit evidence work together to reduce risk and improve detection and response.
+
+- Infrastructure controls restrict how production systems are reached and separate production from non-production environments.
+
+- Application controls require peer review, vulnerability scanning, security-focused review for sensitive changes, and controlled release practices.
+
+- Data controls encrypt sensitive records at rest and in transit, govern retention, and keep production data out of non-production environments.
+
+- Identity controls enforce centralized authentication, MFA, least privilege, access reviews, and immediate offboarding.
+
+- Operational controls provide alerting, incident response, business continuity planning, disaster recovery testing, and audit evidence.
+
+## Separation of Duties
+
+Toku designs sensitive workflows so that control is separated across systems and roles. Toku does not hold customer funds, private keys, or unilateral signing authority. Payment-related workflows require client approval through systems outside Toku infrastructure, while Toku maintains the records needed for reconciliation and auditability.
+
+Internal access follows least privilege. Employees receive only the access needed for their role, privileged access is reviewed, and production data access is logged.
+
+## Security Operations
+
+Security operations combine continuous monitoring, endpoint and infrastructure controls, vulnerability management, access reviews, penetration testing, and compliance evidence collection. Security findings are assigned ownership, tracked to remediation, and reviewed as part of the operating program.
+
+Toku maintains documented incident response, business continuity, and disaster recovery processes. These processes are tested through tabletop exercises, structured walkthroughs, and recovery validation.
+
+## Trust Center Topic Areas
+
+The rest of the Trust Center provides detail across these areas:
+
+- Platform Security: infrastructure, endpoint, application, and secure development controls.
+
+- Data Security: encryption, data handling, integration security boundaries, and non-custody controls.
+
+- Access & Identity: authentication, MFA, RBAC, access reviews, personnel controls, and vendor review.
+
+- Resilience & Compliance: incident response, business continuity, disaster recovery, SOC 2, privacy, and audit evidence.
+
+- Security Investments: recent and ongoing hardening work across endpoint security, access, monitoring, credential management, and assessments.
+
+## Commitment to Security
+
+Toku maintains a dedicated security operating program for protecting customer data and production systems. The program includes policy governance, employee training, background checks, endpoint compliance, vulnerability management, third-party assessments, penetration testing, incident response, and compliance monitoring.
+
+Security documentation, audit evidence, and relevant reports are available to clients and prospective clients upon request, subject to NDA where appropriate."
+"category","Platform Security","platform-security","","/security-center/platform-security","Infrastructure, network, endpoint, and secure development controls protecting Toku production systems.","","Infrastructure & Network Security
+
+Toku's production environment runs in SOC 2 Type II certified US cloud regions. All inbound traffic passes through a web application firewall for DDoS mitigation, bot detection, and request filtering. Internal access to production requires zero-trust network access, and production, staging, and development environments are fully network-isolated.
+
+Endpoint Security
+
+Every Toku employee device is required to meet endpoint detection, device management, patch compliance, VPN, and monitoring requirements before accessing production systems. Endpoint compliance is actively enforced.
+
+Application Security & Secure Development
+
+All code changes require mandatory peer review before reaching production. Continuous dependency scanning, independent security reviews, quarterly penetration testing, compliance evidence collection, and PII-excluded monitoring validate the security posture."
+"article","Infrastructure & Network Security","infrastructure-and-network-security","Platform Security","/security-center/platform-security/infrastructure-and-network-security","Infrastructure, network, endpoint, and secure development controls protecting Toku production systems.","Classification: External / Client-Facing | Contact: security@toku.com","## Hosting Environment
+
+Toku production infrastructure runs in United States cloud data center regions with independent SOC 2 certification coverage.
+
+Each customer's data is logically isolated at the database level. This provides per-client data isolation, defined security boundaries, simplified audit trails, and separate access controls per customer.
+
+## Network Architecture
+
+Production, staging, and development environments are segmented through network isolation. Direct database access from external networks is blocked.
+
+All internal infrastructure access routes through zero-trust network access. Only authenticated, authorized devices can reach production resources, and VPN traffic is encrypted end-to-end.
+
+## Web Application Firewall & DDoS Protection
+
+A web application firewall is deployed on all application-layer traffic entering Toku's infrastructure. The WAF provides:
+
+- DDoS mitigation at the network and application layers
+
+- Bot detection and automated blocking
+
+- Rate limiting on all endpoints
+
+- Request filtering for known attack patterns (SQLi, XSS, CSRF)
+
+- HSTS enforcement on all public endpoints
+
+All traffic to Toku's platform routes through the WAF before reaching application servers.
+
+## Network Segmentation
+
+Toku enforces strict segmentation between environments:
+
+- Production is isolated from staging and development.
+
+- Staging mirrors production security controls but uses masked/scrubbed data.
+
+- Development environments have production-equivalent security configurations but no connectivity to production databases.
+
+- PII is scrubbed before any data is used in non-production environments.
+
+## Infrastructure Monitoring
+
+Toku uses multiple monitoring layers to detect anomalies, performance issues, and security events:
+
+- Infrastructure monitoring for performance tracking and alerting.
+
+- Real-time application error tracking and exception monitoring.
+
+- PII-excluded analytics and anomaly detection.
+
+- Database logging with enhanced audit trails for all data access and modifications.
+
+- Automated alerting on integration API failures or anomalous behavior.
+
+- Continuous compliance monitoring to verify that infrastructure security controls operate effectively.
+
+All monitoring systems feed into centralized alerting with an on-call escalation policy ensuring continuous coverage.
+
+## Database Security
+
+All databases use AES-256 encryption at rest, managed through the cloud provider's key management service. Direct database access from external networks is blocked at the network level. All database queries involving sensitive data are logged.
+
+Each client's data is logically isolated at the database level. One client's queries cannot reach another client's records.
+
+## Key Infrastructure Controls Summary
+
+| Control | Implementation |
+| --- | --- |
+| Cloud Provider | US cloud regions with SOC 2 certification coverage |
+| WAF / DDoS | Web application firewall on all ingress traffic |
+| VPN | Zero-trust VPN access |
+| Network Segmentation | Full isolation between prod, staging, dev |
+| Database Isolation | Logical tenant isolation per client |
+| Monitoring | Infrastructure monitoring, application error monitoring, database audit logs |
+| External DB Access | Blocked at network level |"
+"article","Endpoint Security","endpoint-security","Platform Security","/security-center/platform-security/endpoint-security","Infrastructure, network, endpoint, and secure development controls protecting Toku production systems.","Classification: External / Client-Facing | Contact: security@toku.com","## Endpoint Detection and Response (EDR)
+
+Endpoint detection and response is required on all Toku employee endpoints. Endpoint monitoring covers malware, ransomware, fileless attacks, and anomalous behavior on devices with access to Toku systems.
+
+Endpoint protection was strengthened as part of the 2026 security hardening program. All employees must keep endpoint protection installed and active.
+
+## Device Management
+
+Company-managed devices are subject to configuration enforcement, OS patch compliance, software inventory, and security policy application. Devices must meet Toku baseline security requirements before accessing production systems.
+
+## VPN and Zero-Trust Network Access
+
+All internal access to Toku production infrastructure routes through zero-trust network access. Only authenticated and authorized devices can reach production resources, and VPN traffic is encrypted end-to-end.
+
+Zero-trust network access was strengthened as part of Toku 2026 infrastructure hardening, adding network-level access control on top of endpoint and application-level protections.
+
+## Endpoint Monitoring
+
+Toku maintains additional endpoint monitoring on devices with access to critical systems. This supports security monitoring, investigation readiness, and evidence collection.
+
+## Mandatory Security Software
+
+Every Toku employee device must meet the following security requirements:
+
+- Endpoint detection and response installed and active.
+
+- Zero-trust VPN access enabled for production infrastructure.
+
+- Device management, patch compliance, disk encryption, and screen lock enforcement active.
+
+Compliance with these requirements is monitored and enforced. Failure to maintain required security controls is treated as a performance issue.
+
+## Security Readiness
+
+Toku maintains investigation readiness on employee endpoints with access to critical infrastructure. Evidence collection procedures are validated and maintained as part of Toku's security hardening program."
+"article","Application Security & Secure Development","application-security-and-secure-development","Platform Security","/security-center/platform-security/application-security-and-secure-development","Infrastructure, network, endpoint, and secure development controls protecting Toku production systems.","Classification: External / Client-Facing | Contact: security@toku.com","## Secure Development Lifecycle
+
+Toku follows a secure development lifecycle that integrates security checks into every phase of delivery, from design through deployment.
+
+All code changes require peer review before merging to production. Security-focused reviews are required for changes touching authentication, authorization, payment flows, API integrations, or data handling.
+
+## Third-Party Security Audits and Penetration Testing
+
+Toku engages third-party firms for independent security audits and penetration testing on a quarterly basis. Findings are tracked to resolution with code changes reviewed and merged. Penetration testing reports are available to clients under NDA.
+
+## Vulnerability Management
+
+Toku maintains a multi-layered vulnerability management program:
+
+- Automated dependency scanning runs continuously against the codebase, monitoring for known CVEs across the application stack.
+
+- Vulnerability scan results are triaged by severity, with critical and high-severity issues addressed on an expedited timeline.
+
+- Automated static analysis runs on all code changes to catch common vulnerability patterns before production.
+
+- Findings are tracked in a centralized tracker with assigned ownership and resolution timelines.
+
+## Change Management
+
+Toku's change management process ensures that all modifications to production systems are reviewed, approved, and auditable:
+
+1. Change request submitted with description and risk assessment.
+
+1. Technical and security review by engineering peers.
+
+1. Leadership approval for significant changes.
+
+1. Automated deployment through CI/CD pipeline.
+
+1. Post-deployment validation and monitoring.
+
+For emergency changes, an expedited process is available with retroactive review required within 24 hours and executive approval requirements.
+
+## Code Security Controls
+
+Before any code reaches production, the following controls are enforced:
+
+- Mandatory peer review for all code changes.
+
+- Security-focused review for sensitive changes (auth, payments, data handling).
+
+- Automated static analysis to detect vulnerabilities.
+
+- Continuous dependency scanning for vulnerable libraries.
+
+- All automated tests must pass before code can be merged.
+
+- No secrets, credentials, or API keys are permitted in source code.
+
+## Secret Management
+
+All application secrets, API credentials, and integration tokens are stored in encrypted secret management infrastructure. Secrets are never committed to source code, logged in application output, or included in error messages. Access to secrets is restricted by role and logged.
+
+## Security Event Logging
+
+Toku captures security-relevant events across the application layer:
+
+- Authentication events: logins, password changes, MFA events, account lockouts
+
+- Authorization changes: permission changes, role assignments, privilege escalation
+
+- Administrative actions: user account changes, configuration updates, policy changes
+
+- Data access: sensitive data queries, file downloads, API calls
+
+- Network activity: source IPs, geolocation, VPN connections
+
+- System changes: software installations, configuration modifications, patches
+
+Logs are retained per Toku's data retention policy.
+
+## Compliance Automation
+
+Toku uses a compliance automation platform for continuous monitoring of security controls, employee compliance status, and SOC 2 evidence collection. The platform verifies that controls are operating as expected, including hard drive encryption, screen lock policies, and endpoint protection status. All employees complete annual compliance recertification.
+
+## Security Monitoring and Analytics
+
+Application analytics and monitoring are configured to exclude PII from tracking. Monitoring covers application errors, infrastructure health, performance alerting, and anomalous behavior without storing personally identifiable information in analytics events.
+
+## Log Integrity Protection
+
+Toku implements protections against log tampering:
+
+- Role-based access limiting log access to the security team only.
+
+- All log access is itself logged and monitored.
+
+- Log retention policies enforced across all systems."
+"category","Data Security","data-security","","/security-center/data-security","Encryption, integration security, data minimization, and custody-specific safeguards for sensitive payroll and digital asset workflows.","","Data Protection & Encryption
+
+All data at rest is encrypted with AES-256. All data in transit is encrypted with TLS 1.3 (minimum TLS 1.2). Encryption keys are managed through the cloud provider's key management service with automatic rotation. Toku collects data required for payroll processing and employment administration.
+
+API & Integration Security
+
+Toku secures external system connections with OAuth 2.0, least-privilege scoping, encrypted credential storage, and client-controlled provisioning and revocation. Custody-related API access is additionally restricted to known Toku infrastructure addresses where applicable.
+
+Cryptocurrency & Custody Security
+
+Toku operates on a strict non-custody model. Client approval and execution remain outside Toku's infrastructure, and Toku never holds private keys, funds, or signing authority. This separation of duties is enforced at the infrastructure level."
+"article","Data Protection & Encryption","data-protection-and-encryption","Data Security","/security-center/data-security/data-protection-and-encryption","Encryption, integration security, data minimization, and custody-specific safeguards for sensitive payroll and digital asset workflows.","Classification: External / Client-Facing | Contact: security@toku.com","## Encryption Standards
+
+### Encryption in Transit
+
+All data transmitted to and from Toku's platform is encrypted using TLS 1.3. This covers browser sessions on the admin dashboard, API-to-API integrations with HRIS, payroll, and custody platforms, internal service-to-service communication, and webhook/callback payloads.
+
+Toku enforces a minimum of TLS 1.2 and rejects connections using deprecated cipher suites. HSTS (HTTP Strict Transport Security) is enabled on all public endpoints.
+
+### Encryption at Rest
+
+All database records containing employee PII, compensation data, wallet addresses, and payment records are encrypted using AES-256 at the storage layer. File system encryption is enabled on all volumes hosting application data. Backups are encrypted with AES-256 using separate key management from production systems.
+
+### Key Management
+
+Encryption keys are managed through the cloud provider's key management service with automatic key rotation. Application-level secrets including API credentials and integration tokens are stored in encrypted secret management infrastructure. Secrets are never committed to source code, logged in application logs, or exposed in error messages.
+
+All API credentials for client integrations are stored encrypted and are rotated on a defined schedule or immediately upon any suspected compromise.
+
+### Hashing
+
+Personal API tokens are hashed with SHA-256 before storage. Password reset tokens are generated using cryptographically secure random number generation (crypto.randomBytes), not pseudorandom functions.
+
+## Data We Collect
+
+Toku collects only the data required for payroll processing and employment administration. The table below covers every category of data Toku stores.
+
+| Data Category | Specific Fields | Source System | Purpose |
+| --- | --- | --- | --- |
+| Employee Identity | First name, last name | HRIS | Match payroll records to custody transactions; display in admin dashboard |
+| Employee Contact | Email address | HRIS | Platform login, notifications, pay stub delivery |
+| Employee Address | Street address, city, state/province, postal code, country | HRIS | Tax jurisdiction determination, regulatory compliance |
+| Compensation | Base salary, compensation currency | HRIS | Payment calculations, deduction validation |
+| Payroll Cycle Data | Pay period dates, gross pay, net pay, itemized deductions, pay frequency | Payroll Platform | Calculate settlement amounts, reconciliation |
+| Wallet Addresses | Blockchain wallet address(es), network type | Custody Platform | Route approved payments to verified employee wallets |
+| Payment Records | Transaction hash, settlement amount, asset type, timestamp, status | Custody Platform | Payment confirmation, reconciliation, audit trail |
+| Authentication Data | Hashed password, MFA seed (encrypted), session tokens | Toku Platform | Secure platform access |
+| Audit Logs | Login timestamps, IP addresses, actions performed, API calls | Toku Platform | Security monitoring, compliance auditing |
+
+## Data Flow Architecture
+
+### Inbound Data (HRIS and Payroll to Toku)
+
+Data syncs from HRIS and payroll platforms to Toku over encrypted API connections using OAuth 2.0 authentication. Each API credential is scoped to read-only access with least-privilege permissions. Syncs run on a cadence aligned to each client's pay cycle. No write-back occurs to the HRIS or payroll platform.
+
+### Outbound Data (Toku to Custody Platform)
+
+Toku submits transaction instructions through authenticated API calls. Transaction instructions include the recipient wallet address, amount, and an internal reference ID. The client's custody platform requires the client's own approval before any funds move. Toku's API credential cannot unilaterally execute transactions.
+
+## Data Retention
+
+Data is retained for the duration of service plus a post-termination period per Toku's data retention policy. Payroll and payment records are retained in alignment with applicable tax authority requirements. Audit logs are retained for a minimum of 90 days in active storage and 1 year in archives, with critical security logs retained for 7 years.
+
+Clients may request deletion of their organization's data in accordance with applicable data protection regulations (GDPR, CCPA/CPRA). Deletion requests are confirmed in writing and processed per Toku's data retention policy.
+
+## Data in Non-Production Environments
+
+Toku implements strict controls to keep production data out of non-production environments. Automated data masking replaces confidential fields. PII is scrubbed before non-production use. Development, test, and staging environments have production-equivalent security. Network isolation prevents direct connectivity to production databases.
+
+## AI and Data Processing
+
+Toku does not process PII or proprietary customer data through AI systems. Internal AI use is limited to non-customer-data workflows, and access to those workflows is governed by Toku security policies."
+"article","API & Integration Security","api-and-integration-security","Data Security","/security-center/data-security/api-and-integration-security","Encryption, integration security, data minimization, and custody-specific safeguards for sensitive payroll and digital asset workflows.","Classification: External / Client-Facing | Contact: security@toku.com","## Integration Security Boundary
+
+Toku treats external integrations as controlled security boundaries. Each connection is authenticated, scoped, encrypted in transit, monitored, and revocable by the client.
+
+- Inbound data connections use least-privilege access to retrieve only the data required for authorized workflows.
+
+- Outbound custody-related connections are limited to transaction proposal workflows and cannot unilaterally move funds.
+
+- Integration activity is logged and monitored for failures, timeouts, and anomalous behavior.
+
+Toku does not take custody of funds, does not hold private keys, and does not have signing authority over client wallets.
+
+## API Authentication
+
+All API integrations use OAuth 2.0 authentication with scoped credentials. Each integration credential is provisioned with the minimum permissions required for its function:
+
+- HRIS integrations use read-only API credentials scoped to employee identity and compensation data. No write-back occurs to the HRIS platform.
+
+- Payroll integrations use read-only credentials scoped to payroll cycle data.
+
+- Custody integrations use credentials that can propose transactions but cannot unilaterally execute them. Client approval through the custody provider's policy engine is always required.
+
+## API Credential Management
+
+All API credentials for client integrations are stored encrypted in Toku's secret management infrastructure. Credentials are rotated on a defined schedule and are rotated immediately upon any suspected compromise.
+
+Clients control the provisioning and revocation of API access to their own systems. If a client revokes API access, data synchronization stops immediately. Toku cannot access client systems without client-issued credentials.
+
+## IP Restrictions for Custody Integrations
+
+For custody platform integrations where network restrictions are available, Toku implements IP whitelisting to restrict API access to known Toku infrastructure addresses only. Even if API credentials were compromised, they could not be used from unauthorized network locations.
+
+Network restrictions are reviewed as part of custody integration security setup.
+
+## Data Flow Security
+
+### Inbound (HRIS/Payroll to Toku)
+
+Data syncs from HRIS and payroll platforms over encrypted API connections (TLS 1.3). Syncs run on a scheduled cadence aligned to each client's pay cycle. All inbound data is validated and logged.
+
+### Outbound (Toku to Custody Platform)
+
+Toku submits transaction instructions through authenticated API calls. Transaction instructions include the recipient wallet address, amount, and an internal reference ID. The client's custody platform requires the client's own approval before any funds move.
+
+## Client Control Over Integrations
+
+Clients maintain full control over their integrations with Toku:
+
+- Provisioning: Clients issue API credentials to Toku with their chosen permission scope.
+
+- Revocation: Clients can revoke API access at any time, immediately stopping data flow.
+
+- Monitoring: Clients can monitor API activity through their own system logs.
+
+- Employee enrollment: Clients determine which employees are enrolled. Toku does not add employees without client authorization.
+
+- Transaction approval: All payment disbursements require client approval through their custody provider's policy engine.
+
+## Integration Monitoring
+
+All integration API calls are monitored with automated alerting on failures, timeouts, or anomalous behavior. Integration health is tracked continuously, and the engineering team is alerted to degradation."
+"article","Cryptocurrency & Custody Security","cryptocurrency-and-custody-security","Data Security","/security-center/data-security/cryptocurrency-and-custody-security","Encryption, integration security, data minimization, and custody-specific safeguards for sensitive payroll and digital asset workflows.","Classification: External / Client-Facing | Contact: security@toku.com","## Non-Custody Model
+
+Toku operates on a strict non-custody model. This is an architectural decision, not a policy choice. Toku never takes custody or control of client funds. Clients select their custody provider and keep full control of private keys and transaction approval.
+
+Toku's role is to calculate payroll settlement amounts, propose transactions to the custody platform, and confirm settlement after client-approved execution. Toku does not hold funds, private keys, or signing authority at any point.
+
+## Transaction Flow
+
+Digital asset payment workflows follow a strict approval chain:
+
+1. Preparation: Toku prepares payment instructions based on authorized payroll data.
+
+1. Proposal: Toku submits the transaction instruction to the client's custody provider via authenticated API, including recipient wallet address, amount, and internal reference ID.
+
+1. Client Approval: The client reviews and approves the transaction through their custody provider's interface, typically using multi-signature or policy-engine approval.
+
+1. Execution: The custody provider executes the approved transaction on the blockchain.
+
+1. Confirmation: Toku confirms settlement and updates payment records with the transaction hash and timestamp.
+
+Toku cannot unilaterally execute any transaction. Client approval is enforced at the custody platform level, outside of Toku's infrastructure.
+
+## Asset and Network Controls
+
+Asset and network configuration is governed through client-controlled custody settings, scoped API credentials, and approval workflows. Toku records the asset, network, amount, transaction hash, timestamp, and status needed for reconciliation and auditability.
+
+## Custody Provider Security Review
+
+Custody providers are reviewed for security posture, access-control capabilities, API credential handling, approval workflows, and relevant compliance evidence before use in customer workflows.
+
+Each integration uses scoped API credentials that can propose transactions but cannot sign or execute them.
+
+## Wallet Security
+
+Employee wallet addresses are collected through the Toku platform and stored encrypted (AES-256 at rest). Wallet addresses are used exclusively for routing approved payments. Toku does not have access to employee private keys or the ability to move funds from employee wallets.
+
+## Blockchain Transaction Integrity
+
+All completed transactions are recorded with the on-chain transaction hash, providing an immutable, independently verifiable record of every payment. Clients and employees can verify any transaction directly on the relevant blockchain explorer.
+
+## Separation of Duties
+
+The non-custody model creates a natural separation of duties. Toku handles calculation and proposal. The client handles approval and execution through their custody provider. No single party can unilaterally move funds. This is enforced at the infrastructure level, not by policy alone."
+"category","Access & Identity","access-identity","","/security-center/access-identity","Authentication, SSO, MFA, RBAC, personnel security, vendor review, and least-privilege controls.","","Authentication & Access Control
+
+Toku enforces centralized authentication, MFA, SCIM-based lifecycle controls where configured, and role-based access control. Internal access follows least privilege and is continuously monitored for compliance.
+
+Vendor & Personnel Security
+
+Employees complete background checks before receiving access to production systems. Customer data handling is limited to vetted Toku personnel, and device, identity, endpoint, and compliance controls are enforced before production access is granted."
+"article","Authentication & Access Control","authentication-and-access-control","Access & Identity","/security-center/access-identity/authentication-and-access-control","Authentication, SSO, MFA, RBAC, personnel security, vendor review, and least-privilege controls.","Classification: External / Client-Facing | Contact: security@toku.com","## Single Sign-On (SSO)
+
+Toku uses SAML 2.0 SSO to centralize client-facing authentication and reduce password-based risk. Identity provider configuration is governed through controlled setup and metadata exchange.
+
+Toku's client-facing authentication is managed through an identity platform that handles the SSO lifecycle, including SAML assertion processing, session creation, and identity provider metadata management.
+
+Internally, Toku uses centralized SSO for administrative access to its own systems, ensuring consistent authentication policies across internal tooling.
+
+## Multi-Factor Authentication (MFA)
+
+MFA is enforced using TOTP-based verification (time-based one-time passwords). MFA checks run before session-level authorization, meaning a valid second factor is required before access is granted.
+
+MFA is enforced for all Toku employees. Client users are strongly encouraged to enable MFA. MFA enrollment events are logged with timestamps and source IP addresses.
+
+## Automated User Provisioning (SCIM)
+
+Where SCIM 2.0 is configured, user lifecycle events are automated to reduce stale access. Provisioning and deprovisioning events are tied to identity-provider updates and retained in audit logs.
+
+## Role-Based Access Control (RBAC)
+
+Role-based access control is enforced at every level:
+
+- Client administrators can only view and manage data for their own organization. Cross-tenant access is prevented by logical database isolation.
+
+- Toku internal staff follow least-privilege access. Access is granted only to the systems and data required for a specific role.
+
+- All internal access to production data is logged.
+
+Access requests go through a centralized identity management platform with manager and system owner approval required. Provisioning is automated on approval with a full audit trail.
+
+## Access Reviews
+
+Toku conducts systematic access reviews to ensure access remains appropriate:
+
+- Quarterly reviews for critical systems and privileged accounts.
+
+- Annual reviews for standard user access across all systems.
+
+- Ad-hoc reviews triggered by role changes or security events.
+
+Each review covers account status, permission levels, privileged access, service accounts, and third-party vendor access.
+
+Employee compliance status is continuously monitored, including endpoint security requirements, hard drive encryption, and screen lock policies, providing automated verification that access controls are maintained.
+
+## Session Management
+
+Session tokens are invalidated immediately upon password reset. Password reset tokens expire within 24 hours and are single-use. Old password reset tokens are automatically invalidated when a new token is generated. Rate limiting is enforced on all authentication endpoints, including password reset and MFA verification.
+
+## Post-Employment Access
+
+Toku uses a deliberate post-employment access model built for payroll systems:
+
+- Administrative and active system access is revoked immediately on separation.
+
+- Historical read access to pay stubs, tax documents, and payment history is retained until the user requests deletion. Employees have a right to their historical compensation data.
+
+- Personal wallet access is retained since employees may hold personal cryptocurrency funds.
+
+This model removes active access immediately while preserving employee rights to their own records.
+
+## Authentication Event Logging
+
+All authentication events are logged with full detail: successful and failed login attempts, password changes, MFA enrollment and verification events, account lockouts, session creation and termination, and source IP addresses with geolocation.
+
+Authentication logs are retained for a minimum of 90 days in active storage and 1 year in archives."
+"article","Vendor & Personnel Security","vendor-and-personnel-security","Access & Identity","/security-center/access-identity/vendor-and-personnel-security","Authentication, SSO, MFA, RBAC, personnel security, vendor review, and least-privilege controls.","Classification: External / Client-Facing | Contact: security@toku.com","## No Subcontractors Policy
+
+Toku uses only Toku-employed team members for customer service delivery and operations. Toku does not use subcontractors, offshore development teams, or third-party providers for platform development or customer data handling.
+
+Every person who handles customer data is a vetted, background-checked Toku employee subject to Toku's security policies, training requirements, and access controls.
+
+## Background Checks
+
+Toku runs background checks on all employees before granting access to customer data or production systems. Checks include:
+
+- Criminal history verification
+
+- Employment history verification
+
+- Education credential verification
+
+- SSN validation
+
+- Credit history (for financial roles)
+
+Proof of completed background checks is available under NDA.
+
+## Employee Security Requirements
+
+Every Toku employee is required to meet the following security requirements:
+
+- Endpoint detection and response installed and active on their work device.
+
+- Zero-trust VPN installed and active for production infrastructure access.
+
+- Device management and patch compliance enrollment for company-managed devices.
+
+- Centralized SSO for authentication across internal systems.
+
+- MFA enforced on all Toku accounts and critical systems (1Password for shared credentials).
+
+- Compliance verification for hard drive encryption, screen lock, and endpoint protection status.
+
+- Annual compliance recertification.
+
+Compliance with these requirements is continuously monitored. Non-compliance is treated as a performance issue.
+
+## Principle of Least Privilege
+
+All internal access follows the principle of least privilege. Employees are granted access only to the systems and data required for their specific role. Access requests go through a centralized identity management platform with manager and system owner approval. Access is automatically provisioned upon approval and revoked upon role change or separation.
+
+## Internal Access Logging
+
+All Toku employee access to production data is logged. Authentication events, data access events, administrative actions, and configuration changes are captured with timestamps, source IPs, and user identifiers. Logs are retained for compliance and audit purposes.
+
+## Separation on Termination
+
+When an employee leaves Toku, all administrative and system access is revoked immediately. Revocation is automated through the identity management platform and verified during offboarding.
+
+## Third-Party Vendor Assessment
+
+Toku evaluates the security posture of third-party vendors and service providers that access customer data or integrate with Toku's platform. Assessments cover security certifications, data handling practices, and compliance posture.
+
+Critical third-party vendors are reviewed for independent security certifications and relevant compliance evidence before use.
+
+Vendor reviews cover the vendor role, security certifications, data handling practices, access scope, subprocessors, and evidence of control operation. Reviews are updated when vendor risk changes or when new access to customer data is introduced."
+"category","Resilience & Compliance","resilience-compliance","","/security-center/resilience-compliance","Incident response, business continuity, disaster recovery, SOC 2, privacy, and audit evidence.","","Incident Response & Management
+
+Toku maintains a formal Incident Management Response Plan with severity levels SEV-1 through SEV-4, assigned roles (Incident Commander, Technical Lead, Communications Lead, Legal Advisor), defined communication protocols, and blameless postmortems. Quarterly tabletop exercises cover scenarios including payment rail failures, API outages, and security events.
+
+Business Continuity & Disaster Recovery
+
+Business Continuity and Disaster Recovery Plans are tested annually. Backups are encrypted with AES-256 using separate key management. Recovery procedures are validated through tabletop exercises, structured walkthroughs, and simulation tests.
+
+Compliance & Certifications
+
+Toku has completed a SOC 2 Type II audit, with the renewed report expected in May 2026. Continuous compliance automation supports evidence collection. GDPR compliance is maintained with Data Processing Addendums for EU/UK employees. CCPA/CPRA compliance is maintained for California residents. Quarterly penetration testing is conducted by third-party firms with reports available upon request under NDA."
+"article","Incident Response & Management","incident-response-and-management","Resilience & Compliance","/security-center/resilience-compliance/incident-response-and-management","Incident response, business continuity, disaster recovery, SOC 2, privacy, and audit evidence.","Classification: External / Client-Facing | Contact: security@toku.com","## Incident Response Framework
+
+Toku maintains an Incident Management Response Plan covering the full lifecycle of security and operational incidents: detection, triage, response, resolution, and postmortem. The plan is built for the specific risks of SaaS payroll and cryptocurrency settlement.
+
+## Severity Classification
+
+| Level | Description | Response Expectations |
+| --- | --- | --- |
+| SEV-1 Critical | Broad business impact or regulatory consequence (e.g., global payroll deadline missed, large-scale data breach, payment transfer failures for multiple customers on payday) | All-hands response, Incident Commander and executives engaged within 15 minutes, external communications within 30 minutes, hourly updates until resolved |
+| SEV-2 High | Significant functionality impact, multiple customers affected (e.g., payroll API outage in a region) | Response within 15 minutes, customer communication within 1 hour, resolution within same business day where feasible |
+| SEV-3 Moderate | Limited impact or clear workaround (e.g., payroll delay for a single customer) | Response within 1 hour, resolution within 1 business day |
+| SEV-4 Low | Minimal impact, does not affect payroll execution (e.g., slow report loading) | Tracked and resolved through normal sprint cycle |
+
+## Incident Lifecycle
+
+### Detection
+
+Incidents are detected through multiple channels: automated application and infrastructure monitoring, anomaly detection, transaction monitoring, payroll data validation jobs, on-call alerting, human reports from employees or customers, and partner escalation from integration partners.
+
+### Triage and Classification
+
+The Incident Commander declares the incident, assigns severity, creates an incident ticket with timestamp, description, and severity, opens a dedicated Slack war room channel, and assigns all roles.
+
+### Response and Mitigation
+
+Immediate containment may include pausing affected workflows, disabling failing integrations, revoking compromised credentials, restoring queues, deploying fixes, and validating recovery before service is resumed.
+
+### Communication
+
+Internal updates flow through the Slack war room with 15-minute stand-ups for SEV-1 incidents. External communications include direct email notifications to affected customers and regulatory notifications within statutory windows (e.g., GDPR 72-hour requirement).
+
+### Resolution and Postmortem
+
+Technical validation that systems are restored, reconciliation of payroll data and financial transactions, customer communication confirming closure, and a blameless postmortem within 5 business days. Root cause analysis and corrective actions are documented and tracked.
+
+## Roles and Responsibilities
+
+| Role | Responsibility |
+| --- | --- |
+| Incident Commander (IC) | Owns the incident from declaration through closure. Manages severity, tasking, and decision log. |
+| Technical Lead | Diagnoses root cause, leads remediation, owns rollback/hotfix decisions. |
+| Communications Lead | Prepares internal updates, status page posts, and customer emails. Works with Legal before external release. |
+| Legal and Compliance Advisor | Assesses regulatory reporting obligations (GDPR, SEC, FinCEN). Provides go/no-go on communications. |
+| Customer Success Liaison | Coordinates direct customer outreach and ensures front-line staff are briefed. |
+| Payroll Operations Lead | Executes payroll reruns, ensures corrections, validates employee payments. |
+| Executive Sponsor | Provides authority, unblocks resources. Typically CEO or CTO. |
+
+## Tabletop Exercises
+
+Toku runs quarterly tabletop exercises facilitated by the Security/Compliance team. Scenarios include payment rail disruption, integration outages, security events involving employee data, and payroll calculation incidents.
+
+Exercises include live role assignment, timed injects (media requests, partner outages, customer social media posts), decision-point drills, and conclude with a hotwash and improvement log.
+
+Evaluation metrics: Mean Time to Detection (MTTD), Mean Time to Mitigation (MTTM), communications accuracy, and stakeholder confidence.
+
+## Incident Notification to Clients
+
+Toku notifies affected clients within 48 hours of confirming a security event involving customer data or impacting operations. Initial notification may be preliminary pending full investigation, with regular updates throughout."
+"article","Business Continuity & Disaster Recovery","business-continuity-and-disaster-recovery","Resilience & Compliance","/security-center/resilience-compliance/business-continuity-and-disaster-recovery","Incident response, business continuity, disaster recovery, SOC 2, privacy, and audit evidence.","Classification: External / Client-Facing | Contact: security@toku.com","## Business Continuity Plan (BCP)
+
+Toku maintains a Business Continuity Plan covering payroll processing and payment settlement continuity during disruptions. The BCP addresses natural disasters, infrastructure outages, pandemic scenarios, key personnel loss, and third-party provider failures.
+
+The BCP identifies critical business functions, defines recovery priorities, and assigns ownership for continuity actions.
+
+## Disaster Recovery Plan (DRP)
+
+Toku's Disaster Recovery Plan is focused on the technical recovery of systems, data, and infrastructure following a disruptive event. The DRP is tested annually at minimum, using validation exercises including tabletop exercises, structured walkthroughs, and simulation tests.
+
+The DRP covers recovery procedures for all production systems, databases, and integration infrastructure. Recovery time and recovery point objectives are defined and regularly validated through testing.
+
+## Annual Testing
+
+The Disaster Recovery Plan is tested at a minimum annually by the Security Officer in coordination with the Engineering Team. Testing types include:
+
+- Tabletop exercises with cross-functional stakeholders
+
+- Structured walkthroughs of recovery procedures
+
+- Simulation tests of specific failure scenarios
+
+Findings from each test are documented, and remediation plans are created and tracked to completion. Test results are retained for SOC 2 and regulatory audit purposes.
+
+## BCP/DRP/IRP Drill Program
+
+Toku conducts combined Business Continuity, Disaster Recovery, and Incident Response drills that simulate realistic scenarios. These drills test the organization's ability to detect, respond to, and recover from incidents while maintaining business operations.
+
+Drill documentation includes all actions performed, resources utilized, and system changes made. This documentation is retained for post-incident analysis and compliance auditing.
+
+## Data Backup and Recovery
+
+All production data is backed up with AES-256 encryption using separate key management from production systems. Backup integrity is verified through automated checks. Recovery procedures are documented and tested as part of the annual DRP testing program.
+
+## Third-Party Dependency Resilience
+
+Toku plans for disruptions involving third-party dependencies through monitoring, incident response, and documented recovery procedures:
+
+- HRIS/Payroll platform outages are detected through integration monitoring and do not block access to previously synced data.
+
+- Custody provider outages are handled through the incident response process, with client communication, compensating controls, and documented recovery steps.
+
+- Cloud infrastructure uses built-in redundancy within US data center regions.
+
+## Documentation Availability
+
+The following documents are available to clients upon request under NDA:
+
+- Business Continuity Plan (summary)
+
+- Disaster Recovery Plan (summary)
+
+- Incident Response Plan (summary)
+
+- Most recent DRP test results and remediation plan
+
+Contact security@toku.com to request access."
+"article","Compliance & Certifications","compliance-and-certifications","Resilience & Compliance","/security-center/resilience-compliance/compliance-and-certifications","Incident response, business continuity, disaster recovery, SOC 2, privacy, and audit evidence.","Classification: External / Client-Facing | Contact: security@toku.com","## SOC 2 Type II
+
+Toku has completed a SOC 2 Type II audit. The SOC 2 Type II report evaluates the operating effectiveness of Toku's controls over an extended audit period, covering trust service criteria including security, availability, and confidentiality.
+
+Toku is currently in the process of renewing its SOC 2 Type II report. The updated report is expected to be available in May 2026. Contact security@toku.com to be notified when the renewed report is ready.
+
+Toku's infrastructure provider maintains SOC 2 Type II and SOC 3 Type II certifications independently.
+
+## Compliance Automation
+
+Toku uses a compliance automation platform for continuous monitoring of security controls, automated evidence collection for SOC 2, and employee compliance tracking. The platform verifies that controls are operating effectively in real time, including hard drive encryption, screen lock enforcement, endpoint protection status, and security training completion. All employees complete annual compliance recertification.
+
+## GDPR Compliance
+
+Toku complies with the General Data Protection Regulation (GDPR) for employees in EU and UK jurisdictions.
+
+Data Processing Addendum (DPA): Available for all clients with EU/UK employees.
+
+Data Minimization: Toku collects only the data required for payroll processing and employment administration.
+
+Right to Erasure: Supported. Deletion requests are confirmed in writing and processed per Toku's data retention policy.
+
+Data Breach Notification: Toku notifies supervisory authorities and affected data subjects within the GDPR-required 72-hour window when a qualifying breach occurs.
+
+GDPR Compliance Framework: Toku maintains a documented GDPR compliance framework governing data processing activities across all jurisdictions.
+
+## CCPA/CPRA Compliance
+
+Toku complies with the California Consumer Privacy Act (CCPA) and its amendment, the California Privacy Rights Act (CPRA), for California-resident employees.
+
+Service Provider Agreement: Toku operates as a service provider under CCPA/CPRA and does not sell personal information.
+
+Deletion Rights: Toku processes consumer deletion requests in accordance with CCPA/CPRA requirements.
+
+## SOX Control Alignment
+
+For publicly traded clients subject to the Sarbanes-Oxley Act (SOX), Toku maintains audit trail integrity and enforces separation of duties in payment workflows. The non-custody model ensures that no single party can unilaterally move funds, supporting SOX internal control requirements.
+
+## Regulatory Compliance by Jurisdiction
+
+Toku applies the data protection requirements of each employee's jurisdiction. Where local requirements are stricter than Toku's standard policies, local requirements take precedence. Toku tracks relevant employment, payroll, data privacy, and digital asset regulations for the jurisdictions where it processes data.
+
+## Security and Privacy Policies
+
+Toku maintains security and privacy policies that are reviewed and updated on a regular schedule:
+
+- Data Protection Policy
+
+- Incident Response Plan
+
+- Business Continuity Plan
+
+- Disaster Recovery Plan
+
+- Acceptable Use Policy
+
+- Access Control Policy
+
+- Change Management Policy
+
+Policy documents are available to clients upon request under NDA.
+
+## Penetration Testing
+
+Toku conducts penetration testing on a quarterly basis through third-party security firms. Quarterly penetration testing ensures continuous validation of Toku's security posture and rapid identification of potential vulnerabilities. All findings are tracked to resolution with clear ownership and timelines. Penetration testing reports are available to clients upon request under NDA.
+
+## Documentation Available Under NDA
+
+The following compliance and security documentation is available to clients and prospective clients upon request:
+
+| Document | Availability |
+| --- | --- |
+| SOC 2 Type II Report | Under NDA |
+| Security and Privacy Framework | Available |
+| Security and Privacy Policies | Available |
+| Penetration Testing Reports | Under NDA |
+| Data Processing Agreement (DPA) | Available |
+| GDPR Data Processing Agreements | Available |
+| Incident Response Plan (Summary) | Under NDA |
+| Business Continuity and Disaster Recovery Plan | Under NDA |
+
+Contact security@toku.com to request any of the above."
+"category","Security Investments","security-investments","","/security-center/security-investments","Recent and planned investments in endpoint security, access hardening, assessments, audit logging, and control automation.","","2026 Security Hardening Program
+
+In 2026, Toku strengthened endpoint protection, zero-trust network access, custody API network restrictions, credential rotation, database audit logging, and independent security assessment coverage. Full details are in this subpage."
+"article","2026 Security Hardening Program","2026-security-hardening-program","Security Investments","/security-center/security-investments/2026-security-hardening-program","Recent and planned investments in endpoint security, access hardening, assessments, audit logging, and control automation.","Classification: External / Client-Facing | Contact: security@toku.com","## Overview
+
+In 2026, Toku ran a security hardening program across its infrastructure, endpoints, network, and application layers. This included new endpoint protection deployments, network access controls, infrastructure monitoring, credential management improvements, and independent third-party security assessments.
+
+## Third-Party Security Assessments
+
+Toku engaged two independent firms to evaluate and improve its security posture:
+
+- Infrastructure and operational security assessment covering infrastructure, access controls, and operational security.
+
+- Application and digital asset security assessment covering platform controls and custody-related integration components.
+
+Findings from both assessments drove the hardening actions below.
+
+## Endpoint Security Hardening
+
+- Endpoint detection and response deployed on all employee endpoints for threat detection and managed threat hunting. Installation is mandatory and compliance is enforced.
+
+- Enhanced endpoint monitoring deployed on devices with access to critical infrastructure, adding visibility into endpoint activity and investigation readiness.
+
+- Endpoint evidence collection procedures established for employee devices with access to critical systems.
+
+## Network and Infrastructure Hardening
+
+- Zero-trust VPN deployed as the required access path for all production infrastructure. No production system is reachable without authenticated network access.
+
+- Web application firewall deployed on all application-layer traffic for DDoS mitigation, bot detection, rate limiting, and request filtering.
+
+- Custody API network restrictions implemented where supported, limiting API access to known Toku infrastructure IPs.
+
+- Network segmentation reinforced with full isolation between production, staging, and development.
+
+## Credential and Access Management
+
+- Complete credential rotation across all integration services, including API keys, tokens, and secrets for every client integration.
+
+- Client-side credential refresh coordinated for client-managed systems where credential rotation was required.
+
+- Employee password rotation completed organization-wide with MFA reset and re-enrollment.
+
+- MFA enforced for all employees using TOTP-based verification through 1Password.
+
+- Scheduled credential rotation established as a standing operational practice.
+
+## Application and Database Improvements
+
+- Database rebuild completed with enhanced security controls and hardened configurations.
+
+- Enhanced database logging implemented for comprehensive audit trails on all data access and modifications.
+
+- API endpoint hardening to eliminate token exposure in specific endpoints and enforce stricter credential handling throughout the application layer.
+
+- Continuous dependency scanning with triage and remediation SLAs based on severity.
+
+## Monitoring and Detection
+
+- Infrastructure monitoring deployed for systematic production health monitoring, performance tracking, and alerting.
+
+- Enhanced security event logging across all systems, covering authentication, authorization, data access, and administrative actions.
+
+- Automated alerting configured for integration API failures, anomalous access patterns, and security events, with on-call rotation ensuring 24/7 coverage.
+
+## Ongoing Security Program
+
+Beyond the 2026 hardening program, Toku runs these ongoing security practices:
+
+- Quarterly tabletop exercises covering breach, DDoS, ransomware, and insider threat scenarios
+
+- Quarterly penetration testing by third-party firms with reports available on request
+
+- Quarterly access reviews for critical systems and privileged accounts
+
+- SOC 2 Type II compliance with continuous evidence collection
+
+- Continuous vulnerability scanning with triage and remediation timelines by severity
+
+## Current Security Posture
+
+The table below summarizes Toku's current security posture following the completion of the 2026 hardening program.
+
+| Layer | Implementation |
+| --- | --- |
+| Endpoint Protection | Endpoint detection, response, and monitoring on employee devices |
+| Network Access | Zero-trust VPN mandatory for production access |
+| WAF and DDoS | Web application firewall on application traffic |
+| Custody API Security | IP whitelisting + scoped credentials + scheduled rotation |
+| Employee Authentication | MFA enforced for all employees, TOTP via 1Password |
+| Database Security | AES-256 encryption at rest + enhanced audit logging |
+| Monitoring | Infrastructure monitoring, application error monitoring, enhanced database logs, and automated alerting |
+| Forensic Readiness | Continuous endpoint monitoring and evidence collection readiness |
+| Credential Management | Scheduled rotation + immediate rotation on any suspected compromise |
+| Third-Party Audits | Independent infrastructure, application, and digital asset security assessments |
+
+## Questions
+
+For any questions about Toku's security hardening program or current security posture, contact security@toku.com."
+"related_resource","Data Protection & Encryption","data-protection-and-encryption","","/security-center/data-security/data-protection-and-encryption","How Toku protects sensitive payroll, employee, and digital asset data in transit and at rest.","Review data safeguards","How Toku protects sensitive payroll, employee, and digital asset data in transit and at rest."
+"related_resource","API & Integration Security","api-and-integration-security","","/security-center/data-security/api-and-integration-security","How Toku secures authenticated data exchange, integration access, and integration monitoring.","Review integration controls","How Toku secures authenticated data exchange, integration access, and integration monitoring."
+"related_resource","Compliance & Certifications","compliance-and-certifications","","/security-center/resilience-compliance/compliance-and-certifications","How Toku approaches compliance evidence, client security reviews, and privacy obligations.","Review compliance posture","How Toku approaches compliance evidence, client security reviews, and privacy obligations."

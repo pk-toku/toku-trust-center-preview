@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Protection &amp; Encryption | Toku Trust Center</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="promo">Referred customers receive a 10% discount on all core offerings and solutions - up to $5,000. <a href="https://www.toku.com/contact">Contact us now!</a></header>
+  <nav class="site-nav">
+    <a class="logo" href="/security-center/"><img src="/assets/logo.svg" alt="Toku" /></a>
+    <div class="nav-links">
+      <a href="https://www.toku.com">Products</a>
+      <a href="https://www.toku.com">Solutions</a>
+      <a href="https://www.toku.com">Resources</a>
+      <a href="/security-center/">Company / Trust Center</a>
+      <a href="https://www.toku.com/pricing">Pricing</a>
+      <a href="https://www.toku.com/contact">Contact Us</a>
+    </div>
+    <a class="demo" href="https://www.toku.com/get-started">Book a Demo</a>
+  </nav>
+  <main>
+  <section class="page">
+    <nav class="breadcrumbs"><a href="/security-center/">Trust Center</a> / <a href="/security-center/data-security/">Data Security</a> / <span>Data Protection &amp; Encryption</span></nav>
+    <p class="eyebrow">Data Security</p>
+    <h1>Data Protection &amp; Encryption</h1>
+    <p>Classification: External / Client-Facing | Contact: security@toku.com</p>
+  </section>
+  <section class="article-layout">
+    <aside class="side-nav">
+      <a href="/security-center/data-security/">Data Security</a>
+      <a href="/security-center/data-security/data-protection-and-encryption/">Data Protection &amp; Encryption</a><a href="/security-center/data-security/api-and-integration-security/">API &amp; Integration Security</a><a href="/security-center/data-security/cryptocurrency-and-custody-security/">Cryptocurrency &amp; Custody Security</a>
+    </aside>
+    <article class="article">
+      <h2>Encryption Standards</h2>
+<h3>Encryption in Transit</h3>
+<p>All data transmitted to and from Toku&#39;s platform is encrypted using TLS 1.3. This covers browser sessions on the admin dashboard, API-to-API integrations with HRIS, payroll, and custody platforms, internal service-to-service communication, and webhook/callback payloads.</p>
+<p>Toku enforces a minimum of TLS 1.2 and rejects connections using deprecated cipher suites. HSTS (HTTP Strict Transport Security) is enabled on all public endpoints.</p>
+<h3>Encryption at Rest</h3>
+<p>All database records containing employee PII, compensation data, wallet addresses, and payment records are encrypted using AES-256 at the storage layer. File system encryption is enabled on all volumes hosting application data. Backups are encrypted with AES-256 using separate key management from production systems.</p>
+<h3>Key Management</h3>
+<p>Encryption keys are managed through the cloud provider&#39;s key management service with automatic key rotation. Application-level secrets including API credentials and integration tokens are stored in encrypted secret management infrastructure. Secrets are never committed to source code, logged in application logs, or exposed in error messages.</p>
+<p>All API credentials for client integrations are stored encrypted and are rotated on a defined schedule or immediately upon any suspected compromise.</p>
+<h3>Hashing</h3>
+<p>Personal API tokens are hashed with SHA-256 before storage. Password reset tokens are generated using cryptographically secure random number generation (crypto.randomBytes), not pseudorandom functions.</p>
+<h2>Data We Collect</h2>
+<p>Toku collects only the data required for payroll processing and employment administration. The table below covers every category of data Toku stores.</p>
+<div class="table-wrap"><table><thead><tr><th>Data Category</th><th>Specific Fields</th><th>Source System</th><th>Purpose</th></tr></thead><tbody><tr><td>Employee Identity</td><td>First name, last name</td><td>HRIS</td><td>Match payroll records to custody transactions; display in admin dashboard</td></tr><tr><td>Employee Contact</td><td>Email address</td><td>HRIS</td><td>Platform login, notifications, pay stub delivery</td></tr><tr><td>Employee Address</td><td>Street address, city, state/province, postal code, country</td><td>HRIS</td><td>Tax jurisdiction determination, regulatory compliance</td></tr><tr><td>Compensation</td><td>Base salary, compensation currency</td><td>HRIS</td><td>Payment calculations, deduction validation</td></tr><tr><td>Payroll Cycle Data</td><td>Pay period dates, gross pay, net pay, itemized deductions, pay frequency</td><td>Payroll Platform</td><td>Calculate settlement amounts, reconciliation</td></tr><tr><td>Wallet Addresses</td><td>Blockchain wallet address(es), network type</td><td>Custody Platform</td><td>Route approved payments to verified employee wallets</td></tr><tr><td>Payment Records</td><td>Transaction hash, settlement amount, asset type, timestamp, status</td><td>Custody Platform</td><td>Payment confirmation, reconciliation, audit trail</td></tr><tr><td>Authentication Data</td><td>Hashed password, MFA seed (encrypted), session tokens</td><td>Toku Platform</td><td>Secure platform access</td></tr><tr><td>Audit Logs</td><td>Login timestamps, IP addresses, actions performed, API calls</td><td>Toku Platform</td><td>Security monitoring, compliance auditing</td></tr></tbody></table></div>
+<h2>Data Flow Architecture</h2>
+<h3>Inbound Data (HRIS and Payroll to Toku)</h3>
+<p>Data syncs from HRIS and payroll platforms to Toku over encrypted API connections using OAuth 2.0 authentication. Each API credential is scoped to read-only access with least-privilege permissions. Syncs run on a cadence aligned to each client&#39;s pay cycle. No write-back occurs to the HRIS or payroll platform.</p>
+<h3>Outbound Data (Toku to Custody Platform)</h3>
+<p>Toku submits transaction instructions through authenticated API calls. Transaction instructions include the recipient wallet address, amount, and an internal reference ID. The client&#39;s custody platform requires the client&#39;s own approval before any funds move. Toku&#39;s API credential cannot unilaterally execute transactions.</p>
+<h2>Data Retention</h2>
+<p>Data is retained for the duration of service plus a post-termination period per Toku&#39;s data retention policy. Payroll and payment records are retained in alignment with applicable tax authority requirements. Audit logs are retained for a minimum of 90 days in active storage and 1 year in archives, with critical security logs retained for 7 years.</p>
+<p>Clients may request deletion of their organization&#39;s data in accordance with applicable data protection regulations (GDPR, CCPA/CPRA). Deletion requests are confirmed in writing and processed per Toku&#39;s data retention policy.</p>
+<h2>Data in Non-Production Environments</h2>
+<p>Toku implements strict controls to keep production data out of non-production environments. Automated data masking replaces confidential fields. PII is scrubbed before non-production use. Development, test, and staging environments have production-equivalent security. Network isolation prevents direct connectivity to production databases.</p>
+<h2>AI and Data Processing</h2>
+<p>Toku does not process PII or proprietary customer data through AI systems. Internal AI use is limited to non-customer-data workflows, and access to those workflows is governed by Toku security policies.</p>
+    </article>
+  </section>
+</main>
+</body>
+</html>
